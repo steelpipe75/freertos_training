@@ -2,9 +2,9 @@
 cmake_minimum_required(VERSION 3.16)
 
 # project情報
-set(ProjectName "main")
+set(ProjectName "build_test")
 project(${ProjectName}
-        LANGUAGES C
+        LANGUAGES C CXX
 )
 
 # コンパイル情報をJSON形式で出力
@@ -34,5 +34,13 @@ set(CMAKE_C_FLAGS_COVERAGE "-g -O0 -fprofile-instr-generate -fcoverage-mapping")
 #################################################################################
 
 add_executable(${ProjectName}
-    main.c
+    ./src/main.c
 )
+
+#################################################################################
+
+option(BUILD_TESTS "BUILD_TESTS" ON)
+if (BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(./test)
+endif()
