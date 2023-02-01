@@ -55,3 +55,4 @@ add_executable(
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/portable/ThirdParty/GCC/Posix/port.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/portable/ThirdParty/GCC/Posix/utils/wait_for_event.c
 )
+target_link_libraries(freertos_training_1_task_s pthread)
