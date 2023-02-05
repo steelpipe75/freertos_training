@@ -18,8 +18,6 @@
 
 static void prvCreateTasks( void );
 static void prvATask( void *pvParameters );
-static void prvBTask( void *pvParameters );
-static void prvCTask( void *pvParameters );
 
 /*-----------------------------------------------------------*/
 
@@ -36,16 +34,10 @@ void TaskCreateStatic( void )
 static void prvCreateTasks( void )
 {
 	static StaticTask_t xATask;
-	static StaticTask_t xBTask;
-	static StaticTask_t xCTask;
 	
 	static StackType_t ucATaskStack[ configMINIMAL_STACK_SIZE * sizeof( StackType_t ) ];
-	static StackType_t ucBTaskStack[ configMINIMAL_STACK_SIZE * sizeof( StackType_t ) ];
-	static StackType_t ucCTaskStack[ configMINIMAL_STACK_SIZE * sizeof( StackType_t ) ];
 
 	xTaskCreateStatic( prvATask,     "A",     configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucATaskStack,      &xATask );
-	xTaskCreateStatic( prvBTask,     "B",     configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucBTaskStack,      &xBTask );
-	xTaskCreateStatic( prvCTask,     "C",     configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucCTaskStack,      &xCTask);
 }
 /*-----------------------------------------------------------*/
 
@@ -60,38 +52,6 @@ const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1000UL );
 		vTaskDelay( xCycleFrequency );
 
 		printf( "A\r\n");
-	}
-}
-
-/*-----------------------------------------------------------*/
-
-static void prvBTask( void *pvParameters )
-{
-const TickType_t xCycleFrequency = pdMS_TO_TICKS( 5000UL );
-
-	( void ) pvParameters;
-
-	for( ;; )
-	{
-		vTaskDelay( xCycleFrequency );
-
-		printf( "B\r\n");
-	}
-}
-
-/*-----------------------------------------------------------*/
-
-static void prvCTask(void *pvParameters)
-{
-	const TickType_t xCycleFrequency = pdMS_TO_TICKS(8000UL);
-
-	(void)pvParameters;
-
-	for (;; )
-	{
-		vTaskDelay(xCycleFrequency);
-
-		printf("C\r\n");
 	}
 }
 
@@ -157,4 +117,3 @@ static StackType_t uxTimerTaskStack[ configTIMER_TASK_STACK_DEPTH ];
 
 	*pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
 }
-
