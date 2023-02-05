@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # project情報
-set(ProjectName "build_test")
+set(ProjectName "freertos_training_1_task_static")
 project(${ProjectName}
         LANGUAGES C CXX
 )
@@ -41,10 +41,9 @@ include_directories(
     .
 )
 
-add_executable(
-    freertos_training_1_task_s
-    
+add_executable(${ProjectName}
     main.c
+    TaskCreateStatic.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/event_groups.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/stream_buffer.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/timers.c
@@ -55,4 +54,12 @@ add_executable(
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/portable/ThirdParty/GCC/Posix/port.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/portable/ThirdParty/GCC/Posix/utils/wait_for_event.c
 )
-target_link_libraries(freertos_training_1_task_s pthread)
+target_link_libraries(${ProjectName} pthread)
+
+#################################################################################
+
+option(BUILD_TESTS "BUILD_TESTS" ON)
+if (BUILD_TESTS)
+    enable_testing()
+    add_subdirectory(./test)
+endif()
