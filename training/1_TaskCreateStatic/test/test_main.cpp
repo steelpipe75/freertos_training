@@ -13,7 +13,7 @@ static void drive_freertos(void);
 
 static void drive_freertos(void){
 	TaskCreateStatic();
-	for (;;);
+	FAIL();
 }
 
 class FreeRtosUnitTest : public testing::Test {
@@ -27,14 +27,13 @@ protected:
 };
 
 TEST_F(FreeRtosUnitTest, Sample1) {
-    std::this_thread::sleep_for(std::chrono::seconds(10));
-    EXPECT_EQ(1, 1);
+	std::this_thread::sleep_for(std::chrono::seconds(1));
 }
 
 int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
-    int ret =  RUN_ALL_TESTS();
-    return ret;
+	::testing::InitGoogleTest(&argc, argv);
+	int ret =  RUN_ALL_TESTS();
+	return ret;
 }
 
-}  // namespace
+}	// namespace

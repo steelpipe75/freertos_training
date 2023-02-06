@@ -37,13 +37,13 @@ static void prvCreateTasks( void )
 	
 	static StackType_t ucATaskStack[ configMINIMAL_STACK_SIZE * sizeof( StackType_t ) ];
 
-	xTaskCreateStatic( prvATask,     "A",     configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucATaskStack,      &xATask );
+	xTaskCreateStatic( prvATask, "A", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucATaskStack, &xATask );
 }
 /*-----------------------------------------------------------*/
 
 static void prvATask( void *pvParameters )
 {
-const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1000UL );
+	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
 
 	( void ) pvParameters;
 
@@ -51,7 +51,7 @@ const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1000UL );
 	{
 		vTaskDelay( xCycleFrequency );
 
-		printf( "A\r\n");
+		printf( "Task A Runing...\r\n");
 	}
 }
 
@@ -83,10 +83,10 @@ volatile uint32_t ulSetToNonZeroInDebuggerToContinue = 0;
 #ifdef _MSC_VER
 			__asm{ NOP };
 			__asm{ NOP };
-#else
+#else /* #ifdef _MSC_VER */
 			__asm volatile( "NOP" );
 			__asm volatile( "NOP" );
-#endif
+#endif /* #ifdef _MSC_VER */
 		}
 	}
 	taskEXIT_CRITICAL();
