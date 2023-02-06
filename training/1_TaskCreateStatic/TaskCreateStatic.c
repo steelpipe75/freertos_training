@@ -81,8 +81,8 @@ volatile uint32_t ulSetToNonZeroInDebuggerToContinue = 0;
 		while( ulSetToNonZeroInDebuggerToContinue == 0 )
 		{
 #ifdef _MSC_VER
-			__asm{ NOP };
-			__asm{ NOP };
+			__nop();
+			__nop();
 #else /* #ifdef _MSC_VER */
 			__asm volatile( "NOP" );
 			__asm volatile( "NOP" );
