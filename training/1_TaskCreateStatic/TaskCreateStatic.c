@@ -43,7 +43,7 @@ static void prvCreateTasks( void )
 
 static void prvATask( void *pvParameters )
 {
-const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1000UL );
+	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
 
 	( void ) pvParameters;
 
@@ -51,7 +51,7 @@ const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1000UL );
 	{
 		vTaskDelay( xCycleFrequency );
 
-		printf( "A\r\n");
+		printf( "Task A Runing...\r\n");
 	}
 }
 

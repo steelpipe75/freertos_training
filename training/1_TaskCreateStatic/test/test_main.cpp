@@ -13,7 +13,7 @@ static void drive_freertos(void);
 
 static void drive_freertos(void){
 	TaskCreateStatic();
-	for (;;);
+	FAIL();
 }
 
 class FreeRtosUnitTest : public testing::Test {
@@ -28,7 +28,6 @@ protected:
 
 TEST_F(FreeRtosUnitTest, Sample1) {
 	std::this_thread::sleep_for(std::chrono::seconds(1));
-	EXPECT_EQ(1, 1);
 }
 
 int main(int argc, char** argv) {
