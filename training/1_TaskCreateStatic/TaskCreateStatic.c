@@ -37,7 +37,7 @@ static void prvCreateTasks( void )
 	
 	static StackType_t ucATaskStack[ configMINIMAL_STACK_SIZE * sizeof( StackType_t ) ];
 
-	xTaskCreateStatic( prvATask,     "A",     configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucATaskStack,      &xATask );
+	xTaskCreateStatic( prvATask, "A", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucATaskStack, &xATask );
 }
 /*-----------------------------------------------------------*/
 
