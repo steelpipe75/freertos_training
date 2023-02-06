@@ -10,7 +10,12 @@
 #define configUSE_TICK_HOOK						0
 #define configUSE_DAEMON_TASK_STARTUP_HOOK		0
 #define configTICK_RATE_HZ						( 1000 )
-#define configMINIMAL_STACK_SIZE				( ( unsigned short ) PTHREAD_STACK_MIN )
+#if defined(__unix) || defined(__unix__)
+    #define configMINIMAL_STACK_SIZE				( ( unsigned short ) PTHREAD_STACK_MIN )
+#else /* #ifdef UNIX */
+    #define configMINIMAL_STACK_SIZE				( ( unsigned short ) 70 )
+#endif /* #ifdef UNIX */
+
 #define configMAX_TASK_NAME_LEN					( 12 )
 #define configUSE_TRACE_FACILITY				1
 #define configUSE_16_BIT_TICKS					0

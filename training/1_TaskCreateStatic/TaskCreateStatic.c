@@ -83,10 +83,10 @@ volatile uint32_t ulSetToNonZeroInDebuggerToContinue = 0;
 #ifdef _MSC_VER
 			__asm{ NOP };
 			__asm{ NOP };
-#else
+#else /* #ifdef _MSC_VER */
 			__asm volatile( "NOP" );
 			__asm volatile( "NOP" );
-#endif
+#endif /* #ifdef _MSC_VER */
 		}
 	}
 	taskEXIT_CRITICAL();
