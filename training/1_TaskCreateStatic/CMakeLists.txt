@@ -26,10 +26,14 @@ if(NOT CMAKE_BUILD_TYPE)
         "Debug" "Release" "Coverage")
 endif()
 
-set(CMAKE_C_FLAGS "-Wall -Wextra")
-set(CMAKE_C_FLAGS_DEBUG "-g -O0")
-set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
-set(CMAKE_C_FLAGS_COVERAGE "-g -O0 -fprofile-instr-generate -fcoverage-mapping")
+if (MSVC)
+    set(CMAKE_C_FLAGS "/W4 /WX-")
+else()
+    set(CMAKE_C_FLAGS "-Wall -Wextra")
+    set(CMAKE_C_FLAGS_DEBUG "-g -O0")
+    set(CMAKE_C_FLAGS_RELEASE "-O3 -DNDEBUG")
+    set(CMAKE_C_FLAGS_COVERAGE "-g -O0 -fprofile-instr-generate -fcoverage-mapping")
+endif()
 
 #################################################################################
 
