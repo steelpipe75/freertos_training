@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # project情報
-set(ProjectName "freertos_training_1_task_static")
+set(ProjectName "freertos_training_1_TaskCreateStatic")
 project(${ProjectName}
         LANGUAGES C CXX
 )
