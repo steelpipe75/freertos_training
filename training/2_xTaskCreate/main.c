@@ -1,10 +1,10 @@
-#include "TaskCreateStatic.h"
+#include "sample_xTaskCreate.h"
 
 /*-----------------------------------------------------------*/
 
 int main( void )
 {
-	TaskCreateStatic();
+	sample_xTaskCreate();
 	
 	return 0;
 }
