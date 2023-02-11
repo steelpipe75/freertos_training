@@ -2,7 +2,7 @@
 #include "gtest/gtest.h"
 
 extern "C" {
-	#include "TaskCreateStatic.h"
+	#include "sample_xTaskCreateStatic.h"
 }
 
 /*-----------------------------------------------------------*/
@@ -12,7 +12,7 @@ namespace {
 static void drive_freertos(void);
 
 static void drive_freertos(void){
-	TaskCreateStatic();
+	sample_xTaskCreateStatic();
 	FAIL();
 }
 

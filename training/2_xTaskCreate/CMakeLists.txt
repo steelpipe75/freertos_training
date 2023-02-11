@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # project情報
-set(ProjectName "freertos_training_1_TaskCreateStatic")
+set(ProjectName "freertos_training_2_xTaskCreate")
 project(${ProjectName}
         LANGUAGES C CXX
 )
@@ -44,14 +44,14 @@ set(INCLUDE_DIR
 )
 
 set(SOURCES
-    TaskCreateStatic.c
+    sample_xTaskCreate.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/event_groups.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/stream_buffer.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/timers.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/list.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/queue.c
     ../../lib/third_party/FreeRTOS/FreeRTOS/Source/tasks.c
-    ../../lib/third_party/FreeRTOS/FreeRTOS/Demo/Common/Minimal/StaticAllocation.c
+    ../../lib/third_party/FreeRTOS/FreeRTOS/Source/portable/MemMang/heap_3.c
 )
 
 if(UNIX)

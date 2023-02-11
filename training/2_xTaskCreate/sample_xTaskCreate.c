@@ -8,11 +8,7 @@
 
 /*-----------------------------------------------------------*/
 
-#include "StaticAllocation.h"
-
-/*-----------------------------------------------------------*/
-
-#include "TaskCreateStatic.h"
+#include "sample_xTaskCreate.h"
 
 /*-----------------------------------------------------------*/
 
@@ -21,10 +17,8 @@ static void prvATask( void *pvParameters );
 
 /*-----------------------------------------------------------*/
 
-void TaskCreateStatic( void )
+void sample_xTaskCreate( void )
 {
-	vStartStaticallyAllocatedTasks();
-
 	prvCreateTasks();
 
 	vTaskStartScheduler();
@@ -33,11 +27,9 @@ void TaskCreateStatic( void )
 
 static void prvCreateTasks( void )
 {
-	static StaticTask_t xATask;
+	static TaskHandle_t xATask;
 	
-	static StackType_t ucATaskStack[ configMINIMAL_STACK_SIZE * sizeof( StackType_t ) ];
-
-	xTaskCreateStatic( prvATask, "A", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, ucATaskStack, &xATask );
+	xTaskCreate( prvATask, "A", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, &xATask );
 }
 /*-----------------------------------------------------------*/
 

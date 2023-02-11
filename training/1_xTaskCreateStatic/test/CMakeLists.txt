@@ -19,7 +19,7 @@ set(INCLUDE_DIR
 )
 
 set(SOURCES
-    ../TaskCreateStatic.c
+    ../sample_xTaskCreateStatic.c
     ../../../lib/third_party/FreeRTOS/FreeRTOS/Source/event_groups.c
     ../../../lib/third_party/FreeRTOS/FreeRTOS/Source/stream_buffer.c
     ../../../lib/third_party/FreeRTOS/FreeRTOS/Source/timers.c
