@@ -1,4 +1,4 @@
-# 2_TaskCreate
+# 2_xTaskCreate
 
 xTaskCreate()を使う練習
 
@@ -9,5 +9,5 @@ cmake -S . -B build
 cd build
 make
 ctest
-./freertos_training_2_TaskCreate
+./freertos_training_2_xTaskCreate
 ```

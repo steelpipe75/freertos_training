@@ -1,4 +1,4 @@
-# 1_TaskCreateStatic
+# 1_xTaskCreateStatic
 
 xTaskCreateStatic() を使う練習
 
@@ -9,5 +9,5 @@ cmake -S . -B build
 cd build
 make
 ctest
-./freertos_training_1_TaskCreateStatic
+./freertos_training_1_xTaskCreateStatic
 ```
