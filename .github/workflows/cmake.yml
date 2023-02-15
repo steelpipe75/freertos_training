@@ -38,7 +38,7 @@ jobs:
     - name: Configure CMake 01_Task_Creation/1_xTaskCreateStatic
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build -S ${{github.workspace}}/training/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build -S ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build 01_Task_Creation/1_xTaskCreateStatic
       # Build your program with the given configuration
@@ -55,7 +55,7 @@ jobs:
     - name: Configure CMake 01_Task_Creation/2_xTaskCreate
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build -S ${{github.workspace}}/training/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build -S ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build 01_Task_Creation/2_xTaskCreate
       # Build your program with the given configuration
@@ -72,7 +72,7 @@ jobs:
     - name: Configure CMake 02_Task_Control/2_vTaskDelayUntil
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build -S ${{github.workspace}}/training/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build -S ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build 02_Task_Control/2_vTaskDelayUntil
       # Build your program with the given configuration
