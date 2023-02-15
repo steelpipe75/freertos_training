@@ -29,21 +29,20 @@ static void prvCreateTasks( void )
 {
 	static TaskHandle_t xATask;
 	
-	xTaskCreate( prvATask, "A", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, &xATask );
+	xTaskCreate( prvATask, "A", configMINIMAL_STACK_SIZE, "A", configMAX_PRIORITIES - 2, &xATask );
 }
 /*-----------------------------------------------------------*/
 
 static void prvATask( void *pvParameters )
 {
+	const char* pStr = (const char*)pvParameters;
 	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
-
-	( void ) pvParameters;
 
 	for( ;; )
 	{
 		vTaskDelay( xCycleFrequency );
 
-		printf( "Task A Runing...\r\n");
+		printf( "Task %s Runing...\r\n", pStr);
 	}
 }
 
@@ -82,30 +81,4 @@ volatile uint32_t ulSetToNonZeroInDebuggerToContinue = 0;
 		}
 	}
 	taskEXIT_CRITICAL();
-}
-/*-----------------------------------------------------------*/
-
-void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer, StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize )
-{
-static StaticTask_t xIdleTaskTCB;
-static StackType_t uxIdleTaskStack[ configMINIMAL_STACK_SIZE ];
-
-	*ppxIdleTaskTCBBuffer = &xIdleTaskTCB;
-
-	*ppxIdleTaskStackBuffer = uxIdleTaskStack;
-
-	*pulIdleTaskStackSize = configMINIMAL_STACK_SIZE;
-}
-/*-----------------------------------------------------------*/
-
-void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer, StackType_t **ppxTimerTaskStackBuffer, uint32_t *pulTimerTaskStackSize )
-{
-static StaticTask_t xTimerTaskTCB;
-static StackType_t uxTimerTaskStack[ configTIMER_TASK_STACK_DEPTH ];
-
-	*ppxTimerTaskTCBBuffer = &xTimerTaskTCB;
-
-	*ppxTimerTaskStackBuffer = uxTimerTaskStack;
-
-	*pulTimerTaskStackSize = configTIMER_TASK_STACK_DEPTH;
 }
