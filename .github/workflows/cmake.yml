@@ -35,51 +35,51 @@ jobs:
 
 #######################################
 
-    - name: Configure CMake 1_xTaskCreateStatic
+    - name: Configure CMake 01_Task_Creation/1_xTaskCreateStatic
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/training/1_xTaskCreateStatic/build -S ${{github.workspace}}/training/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build -S ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-    - name: Build 1_xTaskCreateStatic
+    - name: Build 01_Task_Creation/1_xTaskCreateStatic
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/training/1_xTaskCreateStatic/build --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build --config ${{env.BUILD_TYPE}}
 
-    - name: Test 1_xTaskCreateStatic
-      working-directory: ${{github.workspace}}/training/1_xTaskCreateStatic/build
+    - name: Test 01_Task_Creation/1_xTaskCreateStatic
+      working-directory: ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
 #######################################
 
-    - name: Configure CMake 2_xTaskCreate
+    - name: Configure CMake 01_Task_Creation/2_xTaskCreate
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/training/2_xTaskCreate/build -S ${{github.workspace}}/training/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build -S ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-    - name: Build 2_xTaskCreate
+    - name: Build 01_Task_Creation/2_xTaskCreate
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/training/2_xTaskCreate/build --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build --config ${{env.BUILD_TYPE}}
 
-    - name: Test 2_xTaskCreate
-      working-directory: ${{github.workspace}}/training/2_xTaskCreate/build
+    - name: Test 01_Task_Creation/2_xTaskCreate
+      working-directory: ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}
 
 #######################################
 
-    - name: Configure CMake 3_vTaskDelayUntil
+    - name: Configure CMake 02_Task_Control/2_vTaskDelayUntil
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/training/3_vTaskDelayUntil/build -S ${{github.workspace}}/training/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build -S ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
-    - name: Build 3_vTaskDelayUntil
+    - name: Build 02_Task_Control/2_vTaskDelayUntil
       # Build your program with the given configuration
-      run: cmake --build ${{github.workspace}}/training/3_vTaskDelayUntil/build --config ${{env.BUILD_TYPE}}
+      run: cmake --build ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build --config ${{env.BUILD_TYPE}}
 
-    - name: Test 3_vTaskDelayUntil
-      working-directory: ${{github.workspace}}/training/3_vTaskDelayUntil/build
+    - name: Test 02_Task_Control/2_vTaskDelayUntil
+      working-directory: ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}}

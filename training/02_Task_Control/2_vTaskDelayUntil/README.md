@@ -9,5 +9,5 @@ cmake -S . -B build
 cd build
 make
 ctest
-./freertos_training_3_vTaskDelayUntil
+./freertos_training_vTaskDelayUntil
 ```

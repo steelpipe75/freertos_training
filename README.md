@@ -1,11 +1,10 @@
 # freertos_training
 freertosを使う練習
 
-| Link                                                          | 説明                          |
-|---------------------------------------------------------------|-------------------------------|
-| [1_xTaskCreateStatic](training/1_xTaskCreateStatic/README.md) | xTaskCreateStatic() を使う練習 |
-| [2_xTaskCreate](training/2_xTaskCreate/README.md)             | xTaskCreate()を使う練習        |
-| [3_vTaskDelayUntil](training/3_vTaskDelayUntil/README.md)     | vTaskDelayUntil()を使う練習    |
+| Link                                                    |
+|---------------------------------------------------------|
+| [01_Task_Creation](training/01_Task_Creation/README.md) |
+| [02_Task_Control](training/02_Task_Control/README.md)   |
 
 ## CI Status
 [![CMake](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake.yml/badge.svg)](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake.yml)
