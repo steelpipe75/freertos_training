@@ -48,7 +48,7 @@ jobs:
       working-directory: ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ctest -C ${{env.BUILD_TYPE}}
+      run: ctest -C ${{env.BUILD_TYPE}} -V
 
 #######################################
 
@@ -65,7 +65,7 @@ jobs:
       working-directory: ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ctest -C ${{env.BUILD_TYPE}}
+      run: ctest -C ${{env.BUILD_TYPE}} -V
 
 #######################################
 
@@ -82,5 +82,5 @@ jobs:
       working-directory: ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
-      run: ctest -C ${{env.BUILD_TYPE}}
+      run: ctest -C ${{env.BUILD_TYPE}} -V
 
