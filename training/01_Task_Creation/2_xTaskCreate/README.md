@@ -9,5 +9,5 @@ cmake -S . -B build
 cd build
 make
 ctest
-./freertos_training_2_xTaskCreate
+./freertos_training_xTaskCreate
 ```
