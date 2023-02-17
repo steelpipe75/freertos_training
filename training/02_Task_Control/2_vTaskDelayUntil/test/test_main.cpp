@@ -12,7 +12,7 @@ namespace {
 static void drive_freertos(void);
 
 static void drive_freertos(void){
-	TaskCreate();
+	sample_vTaskDelayUntil();
 	FAIL();
 }
 

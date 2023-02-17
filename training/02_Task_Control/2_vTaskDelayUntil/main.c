@@ -4,7 +4,7 @@
 
 int main( void )
 {
-	TaskCreate();
+	sample_vTaskDelayUntil();
 	
 	return 0;
 }
