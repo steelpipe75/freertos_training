@@ -1,6 +1,6 @@
-#ifndef TASKCREATE_H
-#define TASKCREATE_H
+#ifndef SAMPLE_XTASKCREATE_H
+#define SAMPLE_XTASKCREATE_H
 
 extern void sample_xTaskCreate( void );
 
-#endif /* TASKCREATE_H */
+#endif /* SAMPLE_XTASKCREATE_H */

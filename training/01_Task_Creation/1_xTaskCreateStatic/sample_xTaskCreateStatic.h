@@ -1,6 +1,6 @@
-#ifndef TASKCREATESTATIC_H
-#define TASKCREATESTATIC_H
+#ifndef SAMPLE_XTASKCREATESTATIC_H
+#define SAMPLE_XTASKCREATESTATIC_H
 
 extern void sample_xTaskCreateStatic( void );
 
-#endif /* TASKCREATESTATIC_H */
+#endif /* SAMPLE_XTASKCREATESTATIC_H */

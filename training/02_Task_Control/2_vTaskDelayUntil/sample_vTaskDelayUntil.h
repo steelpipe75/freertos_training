@@ -1,6 +1,6 @@
-#ifndef TASKCREATE_H
-#define TASKCREATE_H
+#ifndef SAMPLE_VTASKDELAYUNTIL_H
+#define SAMPLE_VTASKDELAYUNTIL_H
 
 extern void sample_vTaskDelayUntil( void );
 
-#endif /* TASKCREATE_H */
+#endif /* SAMPLE_VTASKDELAYUNTIL_H */
