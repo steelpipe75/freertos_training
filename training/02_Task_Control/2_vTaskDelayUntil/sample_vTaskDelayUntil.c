@@ -38,14 +38,20 @@ static void prvATask( void *pvParameters )
 	const char* pStr = (const char*)pvParameters;
 	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
 	TickType_t xLastWakeTime;
+	TickType_t xGetTime;
 
- 	xLastWakeTime = xTaskGetTickCount();
+	xLastWakeTime = xTaskGetTickCount();
+	xGetTime = xLastWakeTime;
 
 	for( ;; )
 	{
 		vTaskDelayUntil( &xLastWakeTime, xCycleFrequency );
 
+		printf( "xLastWakeTime = %ld, xGetTime = %ld\r\n", xLastWakeTime, xGetTime);
+
 		printf( "Task %s Runing...\r\n", pStr);
+
+	 	xGetTime = xTaskGetTickCount();
 	}
 }
 

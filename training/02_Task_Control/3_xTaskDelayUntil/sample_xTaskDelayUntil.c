@@ -41,7 +41,7 @@ static void prvATask( void *pvParameters )
 	TickType_t xGetTime;
 	BaseType_t xWasDelayed;
 
- 	xLastWakeTime = xTaskGetTickCount();
+	xLastWakeTime = xTaskGetTickCount();
 	xGetTime = xLastWakeTime;
 
 	for( ;; )
@@ -49,6 +49,7 @@ static void prvATask( void *pvParameters )
 		xWasDelayed = xTaskDelayUntil( &xLastWakeTime, xCycleFrequency );
 
 		printf( "xLastWakeTime = %ld, xGetTime = %ld, xWasDelayed = %ld\r\n", xLastWakeTime, xGetTime, xWasDelayed);
+
 		printf( "Task %s Runing...\r\n", pStr);
 
 	 	xGetTime = xTaskGetTickCount();

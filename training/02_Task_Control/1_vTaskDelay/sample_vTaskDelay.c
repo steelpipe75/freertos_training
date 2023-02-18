@@ -37,12 +37,23 @@ static void prvATask( void *pvParameters )
 {
 	const char* pStr = (const char*)pvParameters;
 	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
+	TickType_t xGetTime;
+	TickType_t xPrevGetTime;
+
+	xGetTime = xTaskGetTickCount();
+	xPrevGetTime = xGetTime;
 
 	for( ;; )
 	{
 		vTaskDelay( xCycleFrequency );
 
+		xGetTime = xTaskGetTickCount();
+
+		printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime);
+
 		printf( "Task %s Runing...\r\n", pStr);
+
+		xPrevGetTime = xGetTime;
 	}
 }
 
