@@ -29,16 +29,15 @@ static void prvCreateTasks( void )
 {
 	static TaskHandle_t xATask;
 	
-	xTaskCreate( prvATask, "A", configMINIMAL_STACK_SIZE, NULL, configMAX_PRIORITIES - 2, &xATask );
+	xTaskCreate( prvATask, "A", configMINIMAL_STACK_SIZE, "A", configMAX_PRIORITIES - 2, &xATask );
 }
 /*-----------------------------------------------------------*/
 
 static void prvATask( void *pvParameters )
 {
+	const char* pStr = (const char*)pvParameters;
 	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
 	TickType_t xLastWakeTime;
-
-	( void ) pvParameters;
 
  	xLastWakeTime = xTaskGetTickCount();
 
@@ -46,7 +45,7 @@ static void prvATask( void *pvParameters )
 	{
 		vTaskDelayUntil( &xLastWakeTime, xCycleFrequency );
 
-		printf( "Task A Runing...\r\n");
+		printf( "Task %s Runing...\r\n", pStr);
 	}
 }
 
