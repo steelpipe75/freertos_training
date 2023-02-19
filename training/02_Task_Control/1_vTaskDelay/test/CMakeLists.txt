@@ -22,11 +22,13 @@ set(TestName "${ProjectName}_Test")
 
 set(INCLUDE_DIR
     .
+    ${WORKSPACE_ROOT_DIR}/lib/other
     ${RTOS_INCLUDE_DIR}
 )
 
 set(SOURCES
     ../sample_vTaskDelay.c
+    ${WORKSPACE_ROOT_DIR}/lib/other/gcd.c
     ${RTOS_SOURCES}
 )
 
