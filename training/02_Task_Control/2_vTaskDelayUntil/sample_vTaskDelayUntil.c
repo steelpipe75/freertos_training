@@ -61,7 +61,7 @@ static void prvCreateTasks( void )
 {
 	static TaskHandle_t xATask;
 	
-	xTaskCreate( prvATask, "A", configMINIMAL_STACK_SIZE, "A", configMAX_PRIORITIES - 2, &xATask );
+	xTaskCreate( prvATask, "A", configMINIMAL_STACK_SIZE + 2048, "A", configMAX_PRIORITIES - 2, &xATask );
 }
 /*-----------------------------------------------------------*/
 
