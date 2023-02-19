@@ -58,7 +58,7 @@ static void prvATask( void *pvParameters )
 		printf( "xLastWakeTime = %ld, xGetTime = %ld, xPrevGetTime = %ld, xWasDelayed = %ld\r\n", xLastWakeTime, xGetTime, xPrevGetTime, xWasDelayed );
 		printf( "Task %s Runing...\r\n", pStr);
 
-		work();
+		work( pdMS_TO_TICKS( 10UL ) );
 
 	 	xPrevGetTime = xTaskGetTickCount();
 	}
