@@ -54,7 +54,7 @@ static void prvATask( void *pvParameters )
 		vTaskDelay( xCycleFrequency );
 		xGetTime = xTaskGetTickCount();
 
-		printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime);
+		printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime );
 		printf( "Task %s Runing...\r\n", pStr);
 
 		work();
