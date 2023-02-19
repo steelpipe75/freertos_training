@@ -1,6 +1,6 @@
-# 3_vTaskDelayUntil
+# 1_vTaskDelay
 
-vTaskDelayUntil()を使う練習
+vTaskDelay()を使う練習
 
 ## How to Run
 
@@ -9,5 +9,5 @@ cmake -S . -B build
 cd build
 make
 ctest
-./freertos_training_vTaskDelayUntil
+./freertos_training_vTaskDelay
 ```
