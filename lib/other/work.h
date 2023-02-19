@@ -1,6 +1,6 @@
 #ifndef WORK_H
 #define WORK_H
 
-extern void work( void );
+extern void work( TickType_t time );
 
-#endif /* GCD_H */
+#endif /* WORK_H */
