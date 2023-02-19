@@ -47,11 +47,13 @@ include(${WORKSPACE_ROOT_DIR}/lib/RTOS/RTOS.cmake)
 
 set(INCLUDE_DIR
     .
+    ${WORKSPACE_ROOT_DIR}/lib/other
     ${RTOS_INCLUDE_DIR}
 )
 
 set(SOURCES
     sample_xTaskDelayUntil.c
+    ${WORKSPACE_ROOT_DIR}/lib/other/gcd.c
     ${RTOS_SOURCES}
 )
 

@@ -1,10 +1,14 @@
 /* Standard includes. */
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdint.h>
 
 /* FreeRTOS kernel includes. */
 #include "FreeRTOS.h"
 #include "task.h"
+
+/* 自作ライブラリ */
+#include "gcd.h"
 
 /*-----------------------------------------------------------*/
 
@@ -14,6 +18,34 @@
 
 static void prvCreateTasks( void );
 static void prvATask( void *pvParameters );
+
+/*-----------------------------------------------------------*/
+
+static void rand_gcd(void);
+static void work(void);
+
+/*-----------------------------------------------------------*/
+
+void rand_gcd(void){
+	int32_t a;
+	int32_t b;
+	int32_t g;
+
+	a = rand() % INT32_MAX;
+	b = rand() % INT32_MAX;
+
+	g = gcd( a, b );
+
+	printf( "a = %d, b = %d, g = %d\r\n", a, b, g );
+}
+
+static void work(void){
+	int i;
+
+	for( i = 0; i < 10; i++ ){
+		rand_gcd();
+	}
+}
 
 /*-----------------------------------------------------------*/
 
@@ -48,8 +80,9 @@ static void prvATask( void *pvParameters )
 		vTaskDelayUntil( &xLastWakeTime, xCycleFrequency );
 
 		printf( "xLastWakeTime = %ld, xGetTime = %ld\r\n", xLastWakeTime, xGetTime);
-
 		printf( "Task %s Runing...\r\n", pStr);
+
+		work();
 
 	 	xGetTime = xTaskGetTickCount();
 	}
