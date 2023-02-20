@@ -53,6 +53,23 @@ jobs:
 
 #######################################
 
+    - name: Configure CMake 01_Task_Creation/2_xTaskCreate
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build -S ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build 01_Task_Creation/2_xTaskCreate
+      # Build your program with the given configuration
+      run: cmake --build ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build --config ${{env.BUILD_TYPE}}
+
+    - name: Test 01_Task_Creation/2_xTaskCreate
+      working-directory: ${{github.workspace}}/training/01_Task_Creation/2_xTaskCreate/build
+      # Execute tests defined by the CMake configuration.
+      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+      run: ctest -C ${{env.BUILD_TYPE}} -V
+
+#######################################
+
     - name: Configure CMake 02_Task_Control/1_vTaskDelay
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
@@ -64,6 +81,40 @@ jobs:
 
     - name: Test 02_Task_Control/1_vTaskDelay
       working-directory: ${{github.workspace}}/training/02_Task_Control/1_vTaskDelay/build
+      # Execute tests defined by the CMake configuration.
+      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+      run: ctest -C ${{env.BUILD_TYPE}} -V
+
+#######################################
+
+    - name: Configure CMake 02_Task_Control/2_vTaskDelayUntil
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: cmake -B ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build -S ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build 02_Task_Control/2_vTaskDelayUntil
+      # Build your program with the given configuration
+      run: cmake --build ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build --config ${{env.BUILD_TYPE}}
+
+    - name: Test 02_Task_Control/2_vTaskDelayUntil
+      working-directory: ${{github.workspace}}/training/02_Task_Control/2_vTaskDelayUntil/build
+      # Execute tests defined by the CMake configuration.
+      # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
+      run: ctest -C ${{env.BUILD_TYPE}} -V
+
+#######################################
+
+    - name: Configure CMake 02_Task_Control/3_xTaskDelayUntil
+      # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
+      # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
+      run: cmake -B ${{github.workspace}}/training/02_Task_Control/3_xTaskDelayUntil/build -S ${{github.workspace}}/training/02_Task_Control/3_xTaskDelayUntil -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+
+    - name: Build 02_Task_Control/3_xTaskDelayUntil
+      # Build your program with the given configuration
+      run: cmake --build ${{github.workspace}}/training/02_Task_Control/3_xTaskDelayUntil/build --config ${{env.BUILD_TYPE}}
+
+    - name: Test 02_Task_Control/3_xTaskDelayUntil
+      working-directory: ${{github.workspace}}/training/02_Task_Control/3_xTaskDelayUntil/build
       # Execute tests defined by the CMake configuration.
       # See https://cmake.org/cmake/help/latest/manual/ctest.1.html for more detail
       run: ctest -C ${{env.BUILD_TYPE}} -V
