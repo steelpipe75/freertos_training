@@ -65,9 +65,15 @@ add_executable(${ProjectName}
 )
 
 if(UNIX)
+    message(" ---- if UNIX ---- ")
     target_link_libraries(${ProjectName} pthread)
 elseif(WIN32)
+    message(" ---- else if WIN32 ---- ")
     target_link_libraries(${ProjectName} winmm)
+endif()
+
+if(WIN32)
+    message(" ---- if WIN32 ---- ")
 endif()
 
 #################################################################################
