@@ -45,6 +45,7 @@ static void prvATask( void *pvParameters )
 	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
 	TickType_t xGetTime;
 	TickType_t xPrevGetTime;
+	int loop = 0;
 
 	xGetTime = xTaskGetTickCount();
 	xPrevGetTime = xGetTime;
@@ -57,7 +58,15 @@ static void prvATask( void *pvParameters )
 		printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime );
 		printf( "Task %s Runing...\r\n", pStr);
 
-		work( pdMS_TO_TICKS( 10UL ) );
+		loop++;
+		if( loop == 3 ){
+			work( pdMS_TO_TICKS( 110UL ) );
+		}else if( loop >= 6 ){
+			work( pdMS_TO_TICKS( 210UL ) );
+			loop = 0;
+		}else{
+			work( pdMS_TO_TICKS( 10UL ) );
+		}
 
 		xPrevGetTime = xGetTime;
 	}

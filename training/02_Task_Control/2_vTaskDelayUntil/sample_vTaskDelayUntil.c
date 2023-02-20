@@ -44,6 +44,7 @@ static void prvATask( void *pvParameters )
 	TickType_t xLastWakeTime;
 	TickType_t xGetTime;
 	TickType_t xPrevGetTime;
+	int loop = 0;
 
 	xLastWakeTime = xTaskGetTickCount();
 	xGetTime = xLastWakeTime;
@@ -57,7 +58,15 @@ static void prvATask( void *pvParameters )
 		printf( "xLastWakeTime = %ld, xGetTime = %ld, xPrevGetTime = %ld\r\n", xLastWakeTime, xGetTime, xPrevGetTime );
 		printf( "Task %s Runing...\r\n", pStr);
 
-		work( pdMS_TO_TICKS( 10UL ) );
+		loop++;
+		if( loop == 3 ){
+			work( pdMS_TO_TICKS( 110UL ) );
+		}else if( loop >= 6 ){
+			work( pdMS_TO_TICKS( 210UL ) );
+			loop = 0;
+		}else{
+			work( pdMS_TO_TICKS( 10UL ) );
+		}
 
 	 	xPrevGetTime = xTaskGetTickCount();
 	}
