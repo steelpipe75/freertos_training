@@ -6,7 +6,7 @@ cmake_build_test() {
     echo ==============================================================================
     echo $1
     echo ------------------------------------------------------------------------------
-    cmake -B $1/build -S $1 -DCMAKE_BUILD_TYPE=Release -G Ninja
+    cmake -B $1/build -S $1 -DCMAKE_BUILD_TYPE=Release -G Ninja -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
     echo ------------------------------------------------------------------------------
     cmake --build $1/build --config Release
     (
