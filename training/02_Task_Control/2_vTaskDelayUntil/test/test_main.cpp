@@ -27,7 +27,7 @@ protected:
 };
 
 TEST_F(FreeRtosUnitTest, Sample1) {
-	std::this_thread::sleep_for(std::chrono::seconds(1));
+	std::this_thread::sleep_for(std::chrono::seconds(10));
 }
 
 int main(int argc, char** argv) {
