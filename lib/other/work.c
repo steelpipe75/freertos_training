@@ -20,6 +20,7 @@ void work( TickType_t time ){
 	for( ;; ){
 		CurrTime = xTaskGetTickCount();
 		Diff = CurrTime - StartTime;
+		printf( "StartTime = %ld, CurrTime = %ld, Diff = %ld\r\n", StartTime, CurrTime, Diff );
 		if(Diff > time){
 			break;
 		}
