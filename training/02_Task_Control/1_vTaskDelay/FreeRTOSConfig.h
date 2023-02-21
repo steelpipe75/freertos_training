@@ -12,9 +12,9 @@
 #define configTICK_RATE_HZ						( 10000 )
 #if defined(__unix) || defined(__unix__)
     #define configMINIMAL_STACK_SIZE				( ( unsigned short ) PTHREAD_STACK_MIN )
-#else /* #ifdef UNIX */
+#else /* #if defined(__unix) || defined(__unix__) */
     #define configMINIMAL_STACK_SIZE				( ( unsigned short ) 70 )
-#endif /* #ifdef UNIX */
+#endif /* #if defined(__unix) || defined(__unix__) */
 
 #define configMAX_TASK_NAME_LEN					( 12 )
 #define configUSE_TRACE_FACILITY				1

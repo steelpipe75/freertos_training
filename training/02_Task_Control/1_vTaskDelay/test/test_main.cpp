@@ -9,11 +9,11 @@ extern "C" {
 
 namespace {
 
-#if WIN32
-const long long WaitTime = 20;
-#else
-const long long WaitTime = 1;
-#endif
+#if defined(__unix) || defined(__unix__)
+	const long long WaitTime = 1;
+#else /* #if defined(__unix) || defined(__unix__) */
+	const long long WaitTime = 20;
+#endif /* #if defined(__unix) || defined(__unix__) */
 
 static void drive_freertos(void);
 
