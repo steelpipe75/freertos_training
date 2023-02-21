@@ -8,7 +8,13 @@ extern "C" {
 /*-----------------------------------------------------------*/
 
 namespace {
-	
+
+#if WIN32
+const long long WaitTime = 20;
+#else
+const long long WaitTime = 1;
+#endif
+
 static void drive_freertos(void);
 
 static void drive_freertos(void){
@@ -27,7 +33,7 @@ protected:
 };
 
 TEST_F(FreeRtosUnitTest, Sample1) {
-	std::this_thread::sleep_for(std::chrono::seconds(1));
+	std::this_thread::sleep_for(std::chrono::seconds(WaitTime));
 }
 
 int main(int argc, char** argv) {
