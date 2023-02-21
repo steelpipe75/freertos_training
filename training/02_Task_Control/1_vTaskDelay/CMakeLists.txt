@@ -53,6 +53,7 @@ set(INCLUDE_DIR
 
 set(SOURCES
     sample_vTaskDelay.c
+    MyTrace.c
     ${WORKSPACE_ROOT_DIR}/lib/other/work.c
     ${RTOS_SOURCES}
 )

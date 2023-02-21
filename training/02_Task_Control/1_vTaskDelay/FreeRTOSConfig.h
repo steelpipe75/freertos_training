@@ -66,4 +66,8 @@
 extern void vAssertCalled( unsigned long ulLine, const char * const pcFileName );
 #define configASSERT( x ) if( ( x ) == 0 ) vAssertCalled( __LINE__, __FILE__ )
 
+/* ------------------------------------------------------------------------------- */
+
+#include "MyTrace.h"
+
 #endif /* FREERTOS_CONFIG_H */
