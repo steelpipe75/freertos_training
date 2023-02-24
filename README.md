@@ -8,7 +8,7 @@ freertosを使う練習
 
 ## CI Status
 [![CMake_windows](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake_windows.yml/badge.svg)](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake_windows.yml)
-
+[![CMake_ubuntu](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake_ubuntu.yml/badge.svg)](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake_ubuntu.yml)
 
 ## Acknowledgements
 - This project utilizes OSS (Open Source Software)
