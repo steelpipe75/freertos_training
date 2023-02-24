@@ -7,7 +7,8 @@ freertosを使う練習
 | [02_Task_Control](training/02_Task_Control/README.md)   |
 
 ## CI Status
-[![CMake](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake.yml/badge.svg)](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake.yml)
+[![CMake_windows](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake_windows.yml/badge.svg)](https://github.com/steelpipe75/freertos_training/actions/workflows/cmake_windows.yml)
+
 
 ## Acknowledgements
 - This project utilizes OSS (Open Source Software)
