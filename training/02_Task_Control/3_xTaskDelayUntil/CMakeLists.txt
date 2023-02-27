@@ -41,8 +41,15 @@ endif()
 
 #################################################################################
 
+option(USE_MY_TRACE "USE_MY_TRACE" ON)
+
+#################################################################################
+
 include(${WORKSPACE_ROOT_DIR}/lib/RTOS/RTOS.cmake)
-include(${WORKSPACE_ROOT_DIR}/lib/RTOS/MyTrace/MyTrace.cmake)
+if(USE_MY_TRACE)
+    include(${WORKSPACE_ROOT_DIR}/lib/RTOS/MyTrace/MyTrace.cmake)
+    add_definitions(-DUSE_MY_TRACE)
+endif()
 
 #################################################################################
 

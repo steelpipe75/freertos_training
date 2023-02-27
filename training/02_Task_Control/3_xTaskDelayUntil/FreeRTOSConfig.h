@@ -68,6 +68,8 @@ extern void vAssertCalled( unsigned long ulLine, const char * const pcFileName )
 
 /* ------------------------------------------------------------------------------- */
 
-#include "MyTrace.h"
+#ifdef USE_MY_TRACE
+    #include "MyTrace.h"
+#endif /* #ifdef USE_MY_TRACE */
 
 #endif /* FREERTOS_CONFIG_H */
