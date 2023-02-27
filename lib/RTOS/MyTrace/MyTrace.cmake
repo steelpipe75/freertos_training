@@ -1,0 +1,7 @@
+set(RTOS_MY_TRACE_INCLUDE_DIR
+    ${WORKSPACE_ROOT_DIR}/lib/RTOS/MyTrace
+)
+
+set(RTOS_MY_TRACE_SOURCES
+    ${WORKSPACE_ROOT_DIR}/lib/RTOS/MyTrace/MyTrace.c
+)

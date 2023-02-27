@@ -42,6 +42,7 @@ endif()
 #################################################################################
 
 include(${WORKSPACE_ROOT_DIR}/lib/RTOS/RTOS.cmake)
+include(${WORKSPACE_ROOT_DIR}/lib/RTOS/MyTrace/MyTrace.cmake)
 
 #################################################################################
 
@@ -49,13 +50,14 @@ set(INCLUDE_DIR
     .
     ${WORKSPACE_ROOT_DIR}/lib/other
     ${RTOS_INCLUDE_DIR}
+    ${RTOS_MY_TRACE_INCLUDE_DIR}
 )
 
 set(SOURCES
     sample_vTaskDelay.c
-    MyTrace.c
     ${WORKSPACE_ROOT_DIR}/lib/other/work.c
     ${RTOS_SOURCES}
+    ${RTOS_MY_TRACE_SOURCES}
 )
 
 include_directories(
