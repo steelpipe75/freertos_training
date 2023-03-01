@@ -23,6 +23,9 @@ build/
 # *.mod
 *.smod
 
+# go module files
+go.sum
+
 # Compiled Static libraries
 *.lai
 *.la
