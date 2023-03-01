@@ -47,6 +47,6 @@ func ReadJson(filename string) {
 }
 
 func main() {
-	json_filename := "example.json"
+	json_filename := "example.log"
 	ReadJson(json_filename)
 }
