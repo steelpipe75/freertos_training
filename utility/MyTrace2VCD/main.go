@@ -5,6 +5,8 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+
+	"github.com/elamre/vcd"
 )
 
 type MyTraceReadJson struct {
@@ -71,6 +73,12 @@ func ReadJson(filename string) MyTrace {
 
 func WriteVCD(filename string, myTraceObj MyTrace) {
 	fmt.Printf("%+v\r\n", myTraceObj.Initialize)
+	writer, e := vcd.New(filename, "1ms")
+	if e != nil {
+		panic(e)
+	}
+	defer writer.Close()
+
 	for _, v := range myTraceObj.TaskSwitchedInSlice {
 		fmt.Printf("%+v\r\n", v)
 	}
