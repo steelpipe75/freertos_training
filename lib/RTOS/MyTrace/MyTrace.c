@@ -21,10 +21,10 @@ void myTrace_TaskSwitchedIn( char* pcArg ){
     /* printf( "myTrace_TaskSwitchedIn = %s\r\n", pcArg ); */
     if( (pcInTaskNameStr != NULL) && (pcOutTaskNameStr != NULL) ){
         if( pcInTaskNameStr != pcOutTaskNameStr ){
-            fprintf( stderr, "Tick = %lu, OUT = %s, IN = %s\r\n", xTick, pcOutTaskNameStr, pcInTaskNameStr );
+            fprintf( stderr, "{ \"Type\" : \"TaskSwitchedIn\", \"Data\" : \"{ \\\"Tick\\\" : %lu, \\\"OUT\\\" : \\\"%s\\\", \\\"IN\\\" : \\\"%s\\\" }\" }\r\n", xTick, pcOutTaskNameStr, pcInTaskNameStr );
         }
     }else if( pcInTaskNameStr != NULL ){
-        fprintf( stderr, "Tick = %lu, IN = %s\r\n", xTick, pcInTaskNameStr );
+        fprintf( stderr, "{ \"Type\" : \"TaskSwitchedIn\", \"Data\" : \"{ \\\"Tick\\\" : %lu, \\\"IN\\\" : \\\"%s\\\" }\" }\r\n", xTick, pcInTaskNameStr );
     }
 }
 
