@@ -1,6 +1,8 @@
 #ifndef MY_TRACE_H
 #define MY_TRACE_H
 
+extern void myTrace_Initialize( void );
+
 extern void myTrace_TaskSwitchedIn( char* pxCurrentTCB );
 extern void myTrace_TaskSwitchedOut( char* pxCurrentTCB );
 extern void myTrace_IncrementTick( volatile void* pxTickCount );
