@@ -72,16 +72,20 @@ func ReadJson(filename string) MyTrace {
 }
 
 func WriteVCD(filename string, myTraceObj MyTrace) {
-	fmt.Printf("%+v\r\n", myTraceObj.Initialize)
-	writer, e := vcd.New(filename, "1ms")
+	// fmt.Printf("%+v\r\n", myTraceObj.Initialize)
+	timescaleStr := fmt.Sprintf("%vms", myTraceObj.Initialize.Timescale)
+	// fmt.Printf("%+v\r\n", timescaleStr)
+
+	for _, v := range myTraceObj.TaskSwitchedInSlice {
+		fmt.Printf("%+v\r\n", v)
+	}
+
+	writer, e := vcd.New(filename, timescaleStr)
 	if e != nil {
 		panic(e)
 	}
 	defer writer.Close()
 
-	for _, v := range myTraceObj.TaskSwitchedInSlice {
-		fmt.Printf("%+v\r\n", v)
-	}
 }
 
 func main() {
