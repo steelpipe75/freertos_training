@@ -9,7 +9,7 @@
 #define configUSE_IDLE_HOOK						0
 #define configUSE_TICK_HOOK						0
 #define configUSE_DAEMON_TASK_STARTUP_HOOK		0
-#define configTICK_RATE_HZ						( 10000 )
+#define configTICK_RATE_HZ						( 1000 )
 #if defined(__unix) || defined(__unix__)
     #define configMINIMAL_STACK_SIZE				( ( unsigned short ) PTHREAD_STACK_MIN )
 #else /* #if defined(__unix) || defined(__unix__) */

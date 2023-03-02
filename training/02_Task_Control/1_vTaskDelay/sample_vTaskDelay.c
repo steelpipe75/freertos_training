@@ -25,7 +25,7 @@ void sample_vTaskDelay( void )
 {
 	prvCreateTasks();
 
-	srand(1);
+	myTrace_Initialize();
 
 	vTaskStartScheduler();
 }

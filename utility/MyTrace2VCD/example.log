@@ -1,0 +1,24 @@
+{ "Type" : "Initialize", "Data" : "{ \"Timescale\" : 1.000000 }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 0, \"IN\" : \"Tmr Svc\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 0, \"OUT\" : \"Tmr Svc\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 0, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 99, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 110, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 210, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 221, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 321, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 433, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 533, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 544, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 644, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 655, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 755, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 966, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1066, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1077, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1177, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1188, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1288, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1399, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1499, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitchedIn", "Data" : "{ \"Tick\" : 1510, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
