@@ -30,7 +30,8 @@ type MyTrace struct {
 	TaskSwitchedInSlice []TaskSwitchedIn
 }
 
-func ReadJson(filename string) MyTrace {
+func ReadLog(filename string) MyTrace {
+	fmt.Printf("Read log file (%s) start.\r\n", filename)
 	var myTraceObj MyTrace
 	fp, err := os.Open(filename)
 	if err != nil {
@@ -60,6 +61,8 @@ func ReadJson(filename string) MyTrace {
 			if err := json.Unmarshal(taskSwitchedInByteArray, &taskSwitchedInObj); err != nil {
 				panic(err)
 			}
+			taskSwitchedInObj.In = strings.Replace(taskSwitchedInObj.In, " ", "_", -1)
+			taskSwitchedInObj.Out = strings.Replace(taskSwitchedInObj.Out, " ", "_", -1)
 			myTraceObj.TaskSwitchedInSlice = append(myTraceObj.TaskSwitchedInSlice, taskSwitchedInObj)
 			// fmt.Printf("%+v\r\n", taskSwitchedInObj)
 		}
@@ -69,10 +72,12 @@ func ReadJson(filename string) MyTrace {
 		panic(err)
 	}
 
+	fmt.Printf("Read log file (%s) done.\r\n", filename)
 	return myTraceObj
 }
 
 func WriteVCD(filename string, myTraceObj MyTrace) {
+	fmt.Printf("Write VCD file (%s) start.\r\n", filename)
 	// fmt.Printf("%+v\r\n", myTraceObj.Initialize)
 	timescaleStr := fmt.Sprintf("%vms", myTraceObj.Initialize.Timescale)
 	// fmt.Printf("%+v\r\n", timescaleStr)
@@ -80,8 +85,6 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 	taskNameMap := make(map[string]bool)
 	taskNameSlice := []string{}
 	for _, v := range myTraceObj.TaskSwitchedInSlice {
-		v.In = strings.Replace(v.In, " ", "_", -1)
-		v.Out = strings.Replace(v.Out, " ", "_", -1)
 		if v.In != "" {
 			if !taskNameMap[v.In] {
 				taskNameMap[v.In] = true
@@ -96,8 +99,8 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 		}
 		// fmt.Printf("%+v\r\n", v)
 	}
-	fmt.Printf("%+v\r\n", taskNameMap)
-	fmt.Printf("%+v\r\n", taskNameSlice)
+	// fmt.Printf("%+v\r\n", taskNameMap)
+	// fmt.Printf("%+v\r\n", taskNameSlice)
 
 	vcdVariableSlice := []vcd.VcdDataType{}
 	for _, t := range taskNameSlice {
@@ -113,8 +116,6 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 	_, e = writer.RegisterVariables("TaskSwitchedIn", vcdVariableSlice...)
 
 	for _, v := range myTraceObj.TaskSwitchedInSlice {
-		v.In = strings.Replace(v.In, " ", "_", -1)
-		v.Out = strings.Replace(v.Out, " ", "_", -1)
 		if v.Out != "" {
 			e = writer.SetValue(uint64(v.Tick), "0", v.Out)
 			if e != nil {
@@ -128,11 +129,13 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 			}
 		}
 	}
+
+	fmt.Printf("Write VCD file (%s) done.\r\n", filename)
 }
 
 func main() {
 	json_filename := "example.log"
-	myTraceObj := ReadJson(json_filename)
+	myTraceObj := ReadLog(json_filename)
 	vcd_filename := "example.vcd"
 	WriteVCD(vcd_filename, myTraceObj)
 }
