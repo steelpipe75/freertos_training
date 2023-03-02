@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"os"
+	"strings"
 
 	"github.com/elamre/vcd"
 )
@@ -76,8 +77,32 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 	timescaleStr := fmt.Sprintf("%vms", myTraceObj.Initialize.Timescale)
 	// fmt.Printf("%+v\r\n", timescaleStr)
 
+	taskNameMap := make(map[string]bool)
+	taskNameSlice := []string{}
 	for _, v := range myTraceObj.TaskSwitchedInSlice {
-		fmt.Printf("%+v\r\n", v)
+		v.In = strings.Replace(v.In, " ", "_", -1)
+		v.Out = strings.Replace(v.Out, " ", "_", -1)
+		if v.In != "" {
+			if !taskNameMap[v.In] {
+				taskNameMap[v.In] = true
+				taskNameSlice = append(taskNameSlice, v.In)
+			}
+		}
+		if v.Out != "" {
+			if !taskNameMap[v.Out] {
+				taskNameMap[v.Out] = true
+				taskNameSlice = append(taskNameSlice, v.Out)
+			}
+		}
+		// fmt.Printf("%+v\r\n", v)
+	}
+	fmt.Printf("%+v\r\n", taskNameMap)
+	fmt.Printf("%+v\r\n", taskNameSlice)
+
+	vcdVariableSlice := []vcd.VcdDataType{}
+	for _, t := range taskNameSlice {
+		vcdVariable := vcd.NewVariable(t, "wire", 1)
+		vcdVariableSlice = append(vcdVariableSlice, vcdVariable)
 	}
 
 	writer, e := vcd.New(filename, timescaleStr)
@@ -85,7 +110,24 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 		panic(e)
 	}
 	defer writer.Close()
+	_, e = writer.RegisterVariables("TaskSwitchedIn", vcdVariableSlice...)
 
+	for _, v := range myTraceObj.TaskSwitchedInSlice {
+		v.In = strings.Replace(v.In, " ", "_", -1)
+		v.Out = strings.Replace(v.Out, " ", "_", -1)
+		if v.Out != "" {
+			e = writer.SetValue(uint64(v.Tick), "0", v.Out)
+			if e != nil {
+				panic(e)
+			}
+		}
+		if v.In != "" {
+			e = writer.SetValue(uint64(v.Tick), "1", v.In)
+			if e != nil {
+				panic(e)
+			}
+		}
+	}
 }
 
 func main() {
