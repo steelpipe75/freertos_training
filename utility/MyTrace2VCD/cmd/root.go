@@ -177,7 +177,7 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 		panic(e)
 	}
 	defer writer.Close()
-	_, e = writer.RegisterVariables("TaskSwitch", vcdVariableSlice...)
+	_, e = writer.RegisterVariableList("TaskSwitch", vcdVariableSlice)
 
 	for _, v := range myTraceObj.TaskSwitchSlice {
 		if v.Out != "" {
