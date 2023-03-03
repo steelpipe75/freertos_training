@@ -31,12 +31,12 @@ void myTrace_TaskSwitchedIn( char* pcArg ){
     if( (pcInTaskNameStr != NULL) && (pcOutTaskNameStr != NULL) ){
         if( pcInTaskNameStr != pcOutTaskNameStr ){
             if( MyTraceOutputEnable == 1 ) {
-                fprintf( stderr, "{ \"Type\" : \"TaskSwitchedIn\", \"Data\" : \"{ \\\"Tick\\\" : %lu, \\\"OUT\\\" : \\\"%s\\\", \\\"IN\\\" : \\\"%s\\\" }\" }\r\n", xTick, pcOutTaskNameStr, pcInTaskNameStr );
+                fprintf( stderr, "{ \"Type\" : \"TaskSwitch\", \"Data\" : \"{ \\\"Tick\\\" : %lu, \\\"OUT\\\" : \\\"%s\\\", \\\"IN\\\" : \\\"%s\\\" }\" }\r\n", xTick, pcOutTaskNameStr, pcInTaskNameStr );
             }
         }
     }else if( pcInTaskNameStr != NULL ){
         if( MyTraceOutputEnable == 1 ) {
-            fprintf( stderr, "{ \"Type\" : \"TaskSwitchedIn\", \"Data\" : \"{ \\\"Tick\\\" : %lu, \\\"IN\\\" : \\\"%s\\\" }\" }\r\n", xTick, pcInTaskNameStr );
+            fprintf( stderr, "{ \"Type\" : \"TaskSwitch\", \"Data\" : \"{ \\\"Tick\\\" : %lu, \\\"IN\\\" : \\\"%s\\\" }\" }\r\n", xTick, pcInTaskNameStr );
         }
     }
 }
