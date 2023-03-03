@@ -28,8 +28,17 @@ jobs:
 
     steps:
 
-    - name: Test Matrix
-      run: echo os = ${{ matrix.os }}, cc = ${{ matrix.cc }}
+    - if: ${{ matrix.cc == 'gcc'}}
+      env: 
+        cmake_option: -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
+
+    - if: ${{ matrix.cc == 'clang'}}
+      env: 
+        cmake_option: -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
+
+    - if: ${{ matrix.cc == 'msvc'}}
+      env: 
+        cmake_option: 
 
     - uses: actions/checkout@v3
       # with:
@@ -46,7 +55,7 @@ jobs:
     - name: Configure CMake training/01_Task_Creation/1_xTaskCreateStatic
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build -S ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
+      run: cmake -B ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic/build -S ${{github.workspace}}/training/01_Task_Creation/1_xTaskCreateStatic -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} ${{env.cmake_option}} 
 
     - name: Build training/01_Task_Creation/1_xTaskCreateStatic
       # Build your program with the given configuration
