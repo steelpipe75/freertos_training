@@ -83,15 +83,15 @@ type Initialize struct {
 	Timescale float64
 }
 
-type TaskSwitchedIn struct {
+type TaskSwitch struct {
 	Tick int
 	In   string
 	Out  string
 }
 
 type MyTrace struct {
-	Initialize          Initialize
-	TaskSwitchedInSlice []TaskSwitchedIn
+	Initialize      Initialize
+	TaskSwitchSlice []TaskSwitch
 }
 
 func ReadLog(filename string) MyTrace {
@@ -119,16 +119,16 @@ func ReadLog(filename string) MyTrace {
 			}
 			myTraceObj.Initialize = initializeObj
 			// fmt.Printf("%+v\r\n", initializeObj)
-		} else if jsonObj.Type == "TaskSwitchedIn" {
-			taskSwitchedInByteArray := []byte(jsonObj.Data)
-			taskSwitchedInObj := TaskSwitchedIn{Tick: 0, In: "", Out: ""}
-			if err := json.Unmarshal(taskSwitchedInByteArray, &taskSwitchedInObj); err != nil {
+		} else if jsonObj.Type == "TaskSwitch" {
+			taskSwitchByteArray := []byte(jsonObj.Data)
+			taskSwitchObj := TaskSwitch{Tick: 0, In: "", Out: ""}
+			if err := json.Unmarshal(taskSwitchByteArray, &taskSwitchObj); err != nil {
 				panic(err)
 			}
-			taskSwitchedInObj.In = strings.Replace(taskSwitchedInObj.In, " ", "_", -1)
-			taskSwitchedInObj.Out = strings.Replace(taskSwitchedInObj.Out, " ", "_", -1)
-			myTraceObj.TaskSwitchedInSlice = append(myTraceObj.TaskSwitchedInSlice, taskSwitchedInObj)
-			// fmt.Printf("%+v\r\n", taskSwitchedInObj)
+			taskSwitchObj.In = strings.Replace(taskSwitchObj.In, " ", "_", -1)
+			taskSwitchObj.Out = strings.Replace(taskSwitchObj.Out, " ", "_", -1)
+			myTraceObj.TaskSwitchSlice = append(myTraceObj.TaskSwitchSlice, taskSwitchObj)
+			// fmt.Printf("%+v\r\n", taskSwitchObj)
 		}
 	}
 
@@ -148,7 +148,7 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 
 	taskNameMap := make(map[string]bool)
 	taskNameSlice := []string{}
-	for _, v := range myTraceObj.TaskSwitchedInSlice {
+	for _, v := range myTraceObj.TaskSwitchSlice {
 		if v.In != "" {
 			if !taskNameMap[v.In] {
 				taskNameMap[v.In] = true
@@ -177,9 +177,9 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 		panic(e)
 	}
 	defer writer.Close()
-	_, e = writer.RegisterVariables("TaskSwitchedIn", vcdVariableSlice...)
+	_, e = writer.RegisterVariables("TaskSwitch", vcdVariableSlice...)
 
-	for _, v := range myTraceObj.TaskSwitchedInSlice {
+	for _, v := range myTraceObj.TaskSwitchSlice {
 		if v.Out != "" {
 			e = writer.SetValue(uint64(v.Tick), "0", v.Out)
 			if e != nil {
