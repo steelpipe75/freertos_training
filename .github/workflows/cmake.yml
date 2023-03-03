@@ -16,10 +16,6 @@ jobs:
     strategy:
       matrix:
         os: [ ubuntu-latest, windows-latest ]
-        cc: [ gcc, clang ]
-        include:
-          - os: windows-latest
-            cc: msvc
 
     # The CMake configure and build commands are platform agnostic and should work equally well on Windows or Mac.
     # You can convert this to a matrix build if you need cross-platform coverage.
@@ -27,18 +23,6 @@ jobs:
     runs-on: ${{ matrix.os }}
 
     steps:
-
-    - if: ${{ matrix.cc == 'gcc'}}
-      env: 
-        cmake_option: -DCMAKE_C_COMPILER=gcc -DCMAKE_CXX_COMPILER=g++
-
-    - if: ${{ matrix.cc == 'clang'}}
-      env: 
-        cmake_option: -DCMAKE_C_COMPILER=clang -DCMAKE_CXX_COMPILER=clang++
-
-    - if: ${{ matrix.cc == 'msvc'}}
-      env: 
-        cmake_option: 
 
     - uses: actions/checkout@v3
       # with:
