@@ -2,7 +2,7 @@
 cmake_minimum_required(VERSION 3.16)
 
 # project情報
-set(ProjectName "FreeRTOS_Plus_CLI_with_Trace_Demo")
+set(ProjectName "FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator")
 project(${ProjectName}
         LANGUAGES C
 )
