@@ -30,6 +30,7 @@ import (
 	"strings"
 
 	"github.com/spf13/cobra"
+	"github.com/steelpipe75/hiraoyogi"
 )
 
 // rootCmd represents the base command when called without any subcommands
@@ -141,7 +142,11 @@ func ReadLog(filename string) MyTrace {
 
 func WriteTimingDiagram(filename string, myTraceObj MyTrace) {
 	fmt.Printf("Write TimingDiagram file (%s) start.\r\n", filename)
-	// todo
+	writer, e := hiraoyogi.New(filename)
+	if e != nil {
+		panic(e)
+	}
+	defer writer.Close()
 	fmt.Printf("Write TimingDiagram file (%s) done.\r\n", filename)
 }
 
