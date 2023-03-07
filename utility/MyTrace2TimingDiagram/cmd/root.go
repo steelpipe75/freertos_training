@@ -142,11 +142,59 @@ func ReadLog(filename string) MyTrace {
 
 func WriteTimingDiagram(filename string, myTraceObj MyTrace) {
 	fmt.Printf("Write TimingDiagram file (%s) start.\r\n", filename)
+
 	writer, e := hiraoyogi.New(filename)
 	if e != nil {
 		panic(e)
 	}
 	defer writer.Close()
+
+	taskNameMap := make(map[string]bool)
+	taskNameSlice := []string{}
+	for _, v := range myTraceObj.TaskSwitchSlice {
+		if v.In != "" {
+			if !taskNameMap[v.In] {
+				taskNameMap[v.In] = true
+				taskNameSlice = append(taskNameSlice, v.In)
+			}
+		}
+		if v.Out != "" {
+			if !taskNameMap[v.Out] {
+				taskNameMap[v.Out] = true
+				taskNameSlice = append(taskNameSlice, v.Out)
+			}
+		}
+		// fmt.Printf("%+v\r\n", v)
+	}
+	// fmt.Printf("%+v\r\n", taskNameMap)
+	// fmt.Printf("%+v\r\n", taskNameSlice)
+
+	elementSlice := []hiraoyogi.ElementType{}
+	for _, t := range taskNameSlice {
+		element := writer.NewElement(t, "binary")
+		elementSlice = append(elementSlice, element)
+	}
+	element := writer.NewElement("RuningTaskName", "concise")
+	elementSlice = append(elementSlice, element)
+
+	writer.RegisterElementList(elementSlice)
+
+	for _, v := range myTraceObj.TaskSwitchSlice {
+		if v.Out != "" {
+			e = writer.SetValue(uint64(v.Tick), "low", v.Out)
+			if e != nil {
+				panic(e)
+			}
+		}
+		if v.In != "" {
+			e = writer.SetValue(uint64(v.Tick), "high", v.In)
+			e = writer.SetValue(uint64(v.Tick), v.In, "RuningTaskName")
+			if e != nil {
+				panic(e)
+			}
+		}
+	}
+
 	fmt.Printf("Write TimingDiagram file (%s) done.\r\n", filename)
 }
 
