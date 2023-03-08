@@ -1,0 +1,146 @@
+@startuml
+binary "Tmr_Svc" as Tmr_Svc
+binary "A" as A
+binary "IDLE" as IDLE
+concise "RuningTaskName" as RuningTaskName
+
+@0
+Tmr_Svc is high
+RuningTaskName is Tmr_Svc
+Tmr_Svc is low
+A is high
+RuningTaskName is A
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@99
+IDLE is low
+A is high
+RuningTaskName is A
+
+@110
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@199
+IDLE is low
+A is high
+RuningTaskName is A
+
+@210
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@299
+IDLE is low
+A is high
+RuningTaskName is A
+
+@422
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@499
+IDLE is low
+A is high
+RuningTaskName is A
+
+@510
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@599
+IDLE is low
+A is high
+RuningTaskName is A
+
+@832
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@899
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1021
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1099
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1111
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1199
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1432
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1499
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1622
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1699
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1710
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1799
+IDLE is low
+A is high
+RuningTaskName is A
+
+@2032
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@2099
+IDLE is low
+A is high
+RuningTaskName is A
+
+@2221
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@2299
+IDLE is low
+A is high
+RuningTaskName is A
+
+@2310
+A is low
+IDLE is high
+RuningTaskName is IDLE
+@enduml
