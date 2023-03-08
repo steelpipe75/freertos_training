@@ -4,6 +4,8 @@ binary "A" as A
 binary "IDLE" as IDLE
 concise "RuningTaskName" as RuningTaskName
 
+scale 100 as 50 pixels
+
 @0
 Tmr_Svc is high
 RuningTaskName is Tmr_Svc
@@ -109,8 +111,4 @@ IDLE is low
 A is high
 RuningTaskName is A
 
-@1511
-A is low
-IDLE is high
-RuningTaskName is IDLE
 @enduml

@@ -1,13 +1,11 @@
 @startuml
-binary "Tmr_Svc" as Tmr_Svc
 binary "A" as A
 binary "IDLE" as IDLE
 concise "RuningTaskName" as RuningTaskName
 
+scale 100 as 50 pixels
+
 @0
-Tmr_Svc is high
-RuningTaskName is Tmr_Svc
-Tmr_Svc is low
 A is high
 RuningTaskName is A
 A is low
@@ -99,48 +97,6 @@ IDLE is low
 A is high
 RuningTaskName is A
 
-@1622
-A is low
-IDLE is high
-RuningTaskName is IDLE
+@1500
 
-@1699
-IDLE is low
-A is high
-RuningTaskName is A
-
-@1710
-A is low
-IDLE is high
-RuningTaskName is IDLE
-
-@1799
-IDLE is low
-A is high
-RuningTaskName is A
-
-@2032
-A is low
-IDLE is high
-RuningTaskName is IDLE
-
-@2099
-IDLE is low
-A is high
-RuningTaskName is A
-
-@2221
-A is low
-IDLE is high
-RuningTaskName is IDLE
-
-@2299
-IDLE is low
-A is high
-RuningTaskName is A
-
-@2310
-A is low
-IDLE is high
-RuningTaskName is IDLE
 @enduml
