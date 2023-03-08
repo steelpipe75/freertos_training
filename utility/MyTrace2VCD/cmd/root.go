@@ -70,8 +70,8 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	rootCmd.Flags().StringP("input", "i", "example.log", "Help message for input")
-	rootCmd.Flags().StringP("output", "o", "example.vcd", "Help message for output")
+	rootCmd.Flags().StringP("input", "i", "example.log", "input file")
+	rootCmd.Flags().StringP("output", "o", "example.vcd", "output file")
 }
 
 type MyTraceReadJson struct {
@@ -148,20 +148,20 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 
 	taskNameMap := make(map[string]bool)
 	taskNameSlice := []string{}
-	for _, v := range myTraceObj.TaskSwitchSlice {
-		if v.In != "" {
-			if !taskNameMap[v.In] {
-				taskNameMap[v.In] = true
-				taskNameSlice = append(taskNameSlice, v.In)
+	for _, t := range myTraceObj.TaskSwitchSlice {
+		if t.In != "" {
+			if !taskNameMap[t.In] {
+				taskNameMap[t.In] = true
+				taskNameSlice = append(taskNameSlice, t.In)
 			}
 		}
-		if v.Out != "" {
-			if !taskNameMap[v.Out] {
-				taskNameMap[v.Out] = true
-				taskNameSlice = append(taskNameSlice, v.Out)
+		if t.Out != "" {
+			if !taskNameMap[t.Out] {
+				taskNameMap[t.Out] = true
+				taskNameSlice = append(taskNameSlice, t.Out)
 			}
 		}
-		// fmt.Printf("%+v\r\n", v)
+		// fmt.Printf("%+v\r\n", t)
 	}
 	// fmt.Printf("%+v\r\n", taskNameMap)
 	// fmt.Printf("%+v\r\n", taskNameSlice)
@@ -181,16 +181,16 @@ func WriteVCD(filename string, myTraceObj MyTrace) {
 	vcdVariable := vcd.NewVariable("RuningTaskName", "string", 1)
 	_, e = writer.RegisterVariables("TaskSwitch.RuningTaskName", vcdVariable)
 
-	for _, v := range myTraceObj.TaskSwitchSlice {
-		if v.Out != "" {
-			e = writer.SetValue(uint64(v.Tick), "0", v.Out)
+	for _, t := range myTraceObj.TaskSwitchSlice {
+		if t.Out != "" {
+			e = writer.SetValue(uint64(t.Tick), "0", t.Out)
 			if e != nil {
 				panic(e)
 			}
 		}
-		if v.In != "" {
-			e = writer.SetValue(uint64(v.Tick), "1", v.In)
-			e = writer.SetValue(uint64(v.Tick), v.In, "RuningTaskName")
+		if t.In != "" {
+			e = writer.SetValue(uint64(t.Tick), "1", t.In)
+			e = writer.SetValue(uint64(t.Tick), t.In, "RuningTaskName")
 			if e != nil {
 				panic(e)
 			}
