@@ -70,8 +70,8 @@ func init() {
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
 	// rootCmd.Flags().BoolP("toggle", "t", false, "Help message for toggle")
-	rootCmd.Flags().StringP("input", "i", "example.log", "Help message for input")
-	rootCmd.Flags().StringP("output", "o", "example.puml", "Help message for output")
+	rootCmd.Flags().StringP("input", "i", "example.log", "input file")
+	rootCmd.Flags().StringP("output", "o", "example.puml", "output file")
 }
 
 type MyTraceReadJson struct {
@@ -142,11 +142,59 @@ func ReadLog(filename string) MyTrace {
 
 func WriteTimingDiagram(filename string, myTraceObj MyTrace) {
 	fmt.Printf("Write TimingDiagram file (%s) start.\r\n", filename)
+
 	writer, e := hiraoyogi.New(filename)
 	if e != nil {
 		panic(e)
 	}
 	defer writer.Close()
+
+	taskNameMap := make(map[string]bool)
+	taskNameSlice := []string{}
+	for _, t := range myTraceObj.TaskSwitchSlice {
+		if t.In != "" {
+			if !taskNameMap[t.In] {
+				taskNameMap[t.In] = true
+				taskNameSlice = append(taskNameSlice, t.In)
+			}
+		}
+		if t.Out != "" {
+			if !taskNameMap[t.Out] {
+				taskNameMap[t.Out] = true
+				taskNameSlice = append(taskNameSlice, t.Out)
+			}
+		}
+		// fmt.Printf("%+v\r\n", t)
+	}
+	// fmt.Printf("%+v\r\n", taskNameMap)
+	// fmt.Printf("%+v\r\n", taskNameSlice)
+
+	elementSlice := []hiraoyogi.ElementType{}
+	for _, t := range taskNameSlice {
+		element := writer.NewElement(t, "binary")
+		elementSlice = append(elementSlice, element)
+	}
+	element := writer.NewElement("RuningTaskName", "concise")
+	elementSlice = append(elementSlice, element)
+
+	writer.RegisterElementList(elementSlice)
+
+	for _, t := range myTraceObj.TaskSwitchSlice {
+		if t.Out != "" {
+			e = writer.SetValue(uint64(t.Tick), "low", t.Out)
+			if e != nil {
+				panic(e)
+			}
+		}
+		if t.In != "" {
+			e = writer.SetValue(uint64(t.Tick), "high", t.In)
+			e = writer.SetValue(uint64(t.Tick), t.In, "RuningTaskName")
+			if e != nil {
+				panic(e)
+			}
+		}
+	}
+
 	fmt.Printf("Write TimingDiagram file (%s) done.\r\n", filename)
 }
 
