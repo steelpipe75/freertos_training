@@ -1,0 +1,30 @@
+{ "Type" : "Initialize", "Data" : "{ \"Timescale\" : 1.000000 }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 0, \"IN\" : \"Tmr Svc\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 0, \"OUT\" : \"Tmr Svc\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 0, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 99, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 110, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 199, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 210, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 299, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 422, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 499, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 510, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 599, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 832, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 899, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1021, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1099, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1110, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1199, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1432, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1499, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1621, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1699, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1710, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 1799, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 2032, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 2099, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 2221, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 2299, \"OUT\" : \"IDLE\", \"IN\" : \"A\" }" }
+{ "Type" : "TaskSwitch", "Data" : "{ \"Tick\" : 2310, \"OUT\" : \"A\", \"IN\" : \"IDLE\" }" }
