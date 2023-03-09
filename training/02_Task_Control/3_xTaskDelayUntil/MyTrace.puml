@@ -1,0 +1,105 @@
+@startuml
+binary "A" as A
+binary "IDLE" as IDLE
+concise "RuningTaskName" as RuningTaskName
+
+scale 100 as 50 pixels
+
+@0
+A is high
+RuningTaskName is A
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@99
+IDLE is low
+A is high
+RuningTaskName is A
+
+@110
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@199
+IDLE is low
+A is high
+RuningTaskName is A
+
+@210
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@299
+IDLE is low
+A is high
+RuningTaskName is A
+
+@422
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@499
+IDLE is low
+A is high
+RuningTaskName is A
+
+@510
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@599
+IDLE is low
+A is high
+RuningTaskName is A
+
+@832
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@899
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1021
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1099
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1111
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1199
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1432
+A is low
+IDLE is high
+RuningTaskName is IDLE
+
+@1499
+IDLE is low
+A is high
+RuningTaskName is A
+
+@1500
+IDLE is {hidden}
+A is {hidden}
+RuningTaskName is {hidden}
+
+@enduml
