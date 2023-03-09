@@ -98,5 +98,8 @@ A is high
 RuningTaskName is A
 
 @1500
+IDLE is {hidden}
+A is {hidden}
+RuningTaskName is {hidden}
 
 @enduml
