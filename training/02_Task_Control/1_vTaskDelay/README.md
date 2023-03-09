@@ -11,3 +11,7 @@ make
 ctest
 ./freertos_training_vTaskDelay
 ```
+
+## Memo
+
+![MyTrace.svg](./MyTrace.svg)
