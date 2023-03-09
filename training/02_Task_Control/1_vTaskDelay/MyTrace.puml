@@ -3,9 +3,7 @@ binary "A" as A
 binary "IDLE" as IDLE
 concise "RuningTaskName" as RuningTaskName
 
-caption
-sample_vTaskDelay.c TaskSwitch Timing Diagram
-end caption
+caption sample_vTaskDelay.c TaskSwitch Timing Diagram
 
 scale 100 as 50 pixels
 
