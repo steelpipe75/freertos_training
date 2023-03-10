@@ -14,4 +14,7 @@ ctest
 
 ## Memo
 
+Block状態を解除する時刻(tick)を指定する。
+すでに過ぎた時刻を指定するとBlock状態にならずにreturnしてくる。
+
 ![MyTrace.svg](./MyTrace.svg)
