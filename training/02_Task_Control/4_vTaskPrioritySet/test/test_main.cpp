@@ -10,9 +10,9 @@ extern "C" {
 namespace {
 
 #if defined(__unix) || defined(__unix__)
-	const long long WaitTime = 1;
+	const long long WaitTime = 500;
 #else /* #if defined(__unix) || defined(__unix__) */
-	const long long WaitTime = 1;
+	const long long WaitTime = 500;
 #endif /* #if defined(__unix) || defined(__unix__) */
 
 static void drive_freertos(void);
@@ -33,7 +33,7 @@ protected:
 };
 
 TEST_F(FreeRtosUnitTest, Sample1) {
-	std::this_thread::sleep_for(std::chrono::seconds(WaitTime));
+	std::this_thread::sleep_for(std::chrono::milliseconds(WaitTime));
 }
 
 int main(int argc, char** argv) {

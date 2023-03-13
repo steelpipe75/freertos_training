@@ -49,10 +49,10 @@ static void prvCreateTasks( void )
 static void prvATask( void *pvParameters )
 {
 	const char* pStr = (const char*)pvParameters;
-	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1UL );
+	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 10UL );
 	TickType_t xGetTime;
 	TickType_t xPrevGetTime;
-	int loop = 0;
+	static int loop = 0;
 
 	xGetTime = xTaskGetTickCount();
 	xPrevGetTime = xGetTime;
@@ -62,20 +62,22 @@ static void prvATask( void *pvParameters )
 		vTaskDelay( xCycleFrequency );
 		xGetTime = xTaskGetTickCount();
 
-		printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime );
-		printf( "Task %s Runing...\r\n", pStr);
+#if 0
+		taskENTER_CRITICAL();
+		{
+			fflush( stdout );
+			printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime );
+			printf( "Task %s Runing...\r\n", pStr);
+		}
+		taskEXIT_CRITICAL();
+#endif
 
 		loop++;
-		if(loop == 2){
-			loop = 0;
-			printf( "Set Taske B Priority %d\r\n", configMAX_PRIORITIES - 3 );
+		if(loop % 2 == 0){
 			vTaskPrioritySet( xBTask, configMAX_PRIORITIES - 3 );
-			printf( "Set Taske C Priority %d\r\n", configMAX_PRIORITIES - 4 );
 			vTaskPrioritySet( xCTask, configMAX_PRIORITIES - 4 );
 		}else{
-			printf( "Set Taske B Priority %d\r\n", configMAX_PRIORITIES - 4 );
 			vTaskPrioritySet( xBTask, configMAX_PRIORITIES - 4 );
-			printf( "Set Taske C Priority %d\r\n", configMAX_PRIORITIES - 3 );
 			vTaskPrioritySet( xCTask, configMAX_PRIORITIES - 3 );
 		}
 
@@ -87,11 +89,22 @@ static void prvATask( void *pvParameters )
 
 static void prvTask( void *pvParameters )
 {
+	// const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1UL );
 	const char* pStr = (const char*)pvParameters;
 
 	for( ;; )
 	{
-		printf( "Task %s Runing...\r\n", pStr);
+		// vTaskDelay( xCycleFrequency );
+
+#if 0
+		taskENTER_CRITICAL();
+		{
+			printf( "Task %s Runing...\r\n", pStr);
+		}
+		taskEXIT_CRITICAL();
+#endif
+
+		work( pdMS_TO_TICKS( 1UL ) );
 	}
 }
 
@@ -114,10 +127,10 @@ volatile uint32_t ulSetToNonZeroInDebuggerToContinue = 0;
 	( void ) ulLine;
 	( void ) pcFileName;
 
-	printf( "ASSERT! Line %ld, file %s\r\n", ulLine, pcFileName );
-
- 	taskENTER_CRITICAL();
+	taskENTER_CRITICAL();
 	{
+		printf( "ASSERT! Line %ld, file %s\r\n", ulLine, pcFileName );
+
 		while( ulSetToNonZeroInDebuggerToContinue == 0 )
 		{
 #ifdef _MSC_VER
