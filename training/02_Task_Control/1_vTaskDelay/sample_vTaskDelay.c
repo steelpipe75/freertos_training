@@ -55,8 +55,12 @@ static void prvATask( void *pvParameters )
 		vTaskDelay( xCycleFrequency );
 		xGetTime = xTaskGetTickCount();
 
-		printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime );
-		printf( "Task %s Runing...\r\n", pStr);
+		taskENTER_CRITICAL();
+		{
+			printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime );
+			printf( "Task %s Runing...\r\n", pStr);
+		}
+		taskEXIT_CRITICAL();
 
 		loop++;
 		if( loop == 3 ){
@@ -91,10 +95,10 @@ volatile uint32_t ulSetToNonZeroInDebuggerToContinue = 0;
 	( void ) ulLine;
 	( void ) pcFileName;
 
-	printf( "ASSERT! Line %ld, file %s\r\n", ulLine, pcFileName );
-
- 	taskENTER_CRITICAL();
+	taskENTER_CRITICAL();
 	{
+		printf( "ASSERT! Line %ld, file %s\r\n", ulLine, pcFileName );
+
 		while( ulSetToNonZeroInDebuggerToContinue == 0 )
 		{
 #ifdef _MSC_VER
