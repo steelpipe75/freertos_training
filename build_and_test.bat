@@ -5,6 +5,7 @@ call :cmake_build_test .\training\01_Task_Creation\2_xTaskCreate
 call :cmake_build_test .\training\02_Task_Control\1_vTaskDelay
 call :cmake_build_test .\training\02_Task_Control\2_vTaskDelayUntil
 call :cmake_build_test .\training\02_Task_Control\3_xTaskDelayUntil
+call :cmake_build_test .\training\02_Task_Control\4_vTaskPrioritySet
 
 call :cmake_build .\Demo_CMake\FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator
 

@@ -16,3 +16,4 @@ clean_build ./training/01_Task_Creation/2_xTaskCreate
 clean_build ./training/02_Task_Control/1_vTaskDelay
 clean_build ./training/02_Task_Control/2_vTaskDelayUntil
 clean_build ./training/02_Task_Control/3_xTaskDelayUntil
+clean_build ./training/02_Task_Control/4_vTaskPrioritySet
