@@ -12,6 +12,10 @@
 
 /*-----------------------------------------------------------*/
 
+/* #define PRINT_TASK_RUNING_ENABLE */
+
+/*-----------------------------------------------------------*/
+
 #include "sample_vTaskPrioritySet.h"
 
 /*-----------------------------------------------------------*/
@@ -48,29 +52,26 @@ static void prvCreateTasks( void )
 
 static void prvATask( void *pvParameters )
 {
+#ifdef PRINT_TASK_RUNING_ENABLE
 	const char* pStr = (const char*)pvParameters;
-	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 10UL );
-	TickType_t xGetTime;
-	TickType_t xPrevGetTime;
+#else /* #ifdef PRINT_TASK_RUNING_ENABLE */
+	( void ) pvParameters;
+#endif /* #ifdef PRINT_TASK_RUNING_ENABLE */
+	const TickType_t xCycleFrequency = pdMS_TO_TICKS( 100UL );
 	static int loop = 0;
-
-	xGetTime = xTaskGetTickCount();
-	xPrevGetTime = xGetTime;
 
 	for( ;; )
 	{
 		vTaskDelay( xCycleFrequency );
-		xGetTime = xTaskGetTickCount();
 
-#if 0
+#ifdef PRINT_TASK_RUNING_ENABLE
 		taskENTER_CRITICAL();
 		{
-			fflush( stdout );
-			printf( "xPrevGetTime = %ld, xGetTime = %ld\r\n", xPrevGetTime, xGetTime );
 			printf( "Task %s Runing...\r\n", pStr);
+			fflush( stdout );
 		}
 		taskEXIT_CRITICAL();
-#endif
+#endif /* #ifdef PRINT_TASK_RUNING_ENABLE */
 
 		loop++;
 		if(loop % 2 == 0){
@@ -80,8 +81,6 @@ static void prvATask( void *pvParameters )
 			vTaskPrioritySet( xBTask, configMAX_PRIORITIES - 4 );
 			vTaskPrioritySet( xCTask, configMAX_PRIORITIES - 3 );
 		}
-
-		xPrevGetTime = xGetTime;
 	}
 }
 
@@ -89,22 +88,23 @@ static void prvATask( void *pvParameters )
 
 static void prvTask( void *pvParameters )
 {
-	// const TickType_t xCycleFrequency = pdMS_TO_TICKS( 1UL );
+#ifdef PRINT_TASK_RUNING_ENABLE
 	const char* pStr = (const char*)pvParameters;
+#else /* #ifdef PRINT_TASK_RUNING_ENABLE */
+	( void ) pvParameters;
+#endif /* #ifdef PRINT_TASK_RUNING_ENABLE */
 
 	for( ;; )
 	{
-		// vTaskDelay( xCycleFrequency );
-
-#if 0
+#ifdef PRINT_TASK_RUNING_ENABLE
 		taskENTER_CRITICAL();
 		{
 			printf( "Task %s Runing...\r\n", pStr);
 		}
 		taskEXIT_CRITICAL();
-#endif
+#endif /* #ifdef PRINT_TASK_RUNING_ENABLE */
 
-		work( pdMS_TO_TICKS( 1UL ) );
+		work( pdMS_TO_TICKS( 10UL ) );
 	}
 }
 
