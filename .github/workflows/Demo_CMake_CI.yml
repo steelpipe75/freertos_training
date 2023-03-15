@@ -21,7 +21,7 @@ jobs:
     steps:
 
     - uses: egor-tensin/setup-clang@v1
-    - uses: seanmiddleditch/gha-setup-ninja@master
+    - uses: ashutoshvarma/setup-ninja@master
 
     - uses: actions/checkout@v3
       # with:
