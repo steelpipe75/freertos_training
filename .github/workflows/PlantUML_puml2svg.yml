@@ -31,6 +31,16 @@ jobs:
         with:
           args: -v -tsvg training/02_Task_Control/3_xTaskDelayUntil/MyTrace.puml
 
+      - name: Generate SVG Diagrams training/02_Task_Control/4_vTaskPrioritySet/MyTrace.puml
+        uses: holowinski/plantuml-github-action@main
+        with:
+          args: -v -tsvg training/02_Task_Control/4_vTaskPrioritySet/MyTrace.puml
+
+      - name: Generate SVG Diagrams training/02_Task_Control/5_uxTaskPriorityGet/MyTrace.puml
+        uses: holowinski/plantuml-github-action@main
+        with:
+          args: -v -tsvg training/02_Task_Control/5_uxTaskPriorityGet/MyTrace.puml
+
       - name: Push Local Changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
