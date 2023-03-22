@@ -1,0 +1,269 @@
+@startuml
+binary "Tmr_Svc" as Tmr_Svc
+binary "A" as A
+binary "B" as B
+concise "RuningTaskName" as RuningTaskName
+
+@0
+Tmr_Svc is high
+RuningTaskName is Tmr_Svc
+Tmr_Svc is low
+A is high
+RuningTaskName is A
+A is low
+B is high
+RuningTaskName is B
+B is low
+A is high
+RuningTaskName is A
+
+@1
+A is low
+B is high
+RuningTaskName is B
+
+@3
+B is low
+A is high
+RuningTaskName is A
+
+@5
+A is low
+B is high
+RuningTaskName is B
+
+@7
+B is low
+A is high
+RuningTaskName is A
+
+@15
+A is low
+B is high
+RuningTaskName is B
+
+@17
+B is low
+A is high
+RuningTaskName is A
+
+@19
+A is low
+B is high
+RuningTaskName is B
+
+@21
+B is low
+A is high
+RuningTaskName is A
+
+@23
+A is low
+B is high
+RuningTaskName is B
+
+@25
+B is low
+A is high
+RuningTaskName is A
+
+@27
+A is low
+B is high
+RuningTaskName is B
+
+@29
+B is low
+A is high
+RuningTaskName is A
+
+@31
+A is low
+B is high
+RuningTaskName is B
+
+@33
+B is low
+A is high
+RuningTaskName is A
+
+@35
+A is low
+B is high
+RuningTaskName is B
+
+@37
+B is low
+A is high
+RuningTaskName is A
+
+@39
+A is low
+B is high
+RuningTaskName is B
+
+@41
+B is low
+A is high
+RuningTaskName is A
+
+@43
+A is low
+B is high
+RuningTaskName is B
+
+@45
+B is low
+A is high
+RuningTaskName is A
+
+@47
+A is low
+B is high
+RuningTaskName is B
+
+@49
+B is low
+A is high
+RuningTaskName is A
+
+@51
+A is low
+B is high
+RuningTaskName is B
+
+@53
+B is low
+A is high
+RuningTaskName is A
+
+@55
+A is low
+B is high
+RuningTaskName is B
+
+@57
+B is low
+A is high
+RuningTaskName is A
+
+@59
+A is low
+B is high
+RuningTaskName is B
+
+@61
+B is low
+A is high
+RuningTaskName is A
+
+@63
+A is low
+B is high
+RuningTaskName is B
+
+@65
+B is low
+A is high
+RuningTaskName is A
+
+@67
+A is low
+B is high
+RuningTaskName is B
+
+@69
+B is low
+A is high
+RuningTaskName is A
+
+@71
+A is low
+B is high
+RuningTaskName is B
+
+@73
+B is low
+A is high
+RuningTaskName is A
+
+@75
+A is low
+B is high
+RuningTaskName is B
+
+@77
+B is low
+A is high
+RuningTaskName is A
+
+@79
+A is low
+B is high
+RuningTaskName is B
+
+@81
+B is low
+A is high
+RuningTaskName is A
+
+@83
+A is low
+B is high
+RuningTaskName is B
+
+@85
+B is low
+A is high
+RuningTaskName is A
+
+@87
+A is low
+B is high
+RuningTaskName is B
+
+@89
+B is low
+A is high
+RuningTaskName is A
+
+@91
+A is low
+B is high
+RuningTaskName is B
+
+@93
+B is low
+A is high
+RuningTaskName is A
+
+@95
+A is low
+B is high
+RuningTaskName is B
+
+@97
+B is low
+A is high
+RuningTaskName is A
+
+@99
+A is low
+B is high
+RuningTaskName is B
+
+@101
+B is low
+A is high
+RuningTaskName is A
+
+@103
+A is low
+B is high
+RuningTaskName is B
+
+@105
+B is low
+A is high
+RuningTaskName is A
+@enduml

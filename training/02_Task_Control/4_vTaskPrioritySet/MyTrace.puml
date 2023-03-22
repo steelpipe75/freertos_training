@@ -1,0 +1,97 @@
+@startuml
+binary "Tmr_Svc" as Tmr_Svc
+binary "A" as A
+binary "B" as B
+binary "C" as C
+concise "RuningTaskName" as RuningTaskName
+
+@0
+Tmr_Svc is high
+RuningTaskName is Tmr_Svc
+Tmr_Svc is low
+A is high
+RuningTaskName is A
+A is low
+B is high
+RuningTaskName is B
+
+@99
+B is low
+A is high
+RuningTaskName is A
+A is low
+C is high
+RuningTaskName is C
+
+@199
+C is low
+A is high
+RuningTaskName is A
+A is low
+B is high
+RuningTaskName is B
+
+@299
+B is low
+A is high
+RuningTaskName is A
+A is low
+C is high
+RuningTaskName is C
+
+@399
+C is low
+A is high
+RuningTaskName is A
+A is low
+B is high
+RuningTaskName is B
+
+@499
+B is low
+A is high
+RuningTaskName is A
+A is low
+C is high
+RuningTaskName is C
+
+@599
+C is low
+A is high
+RuningTaskName is A
+A is low
+B is high
+RuningTaskName is B
+
+@699
+B is low
+A is high
+RuningTaskName is A
+A is low
+C is high
+RuningTaskName is C
+
+@799
+C is low
+A is high
+RuningTaskName is A
+A is low
+B is high
+RuningTaskName is B
+
+@899
+B is low
+A is high
+RuningTaskName is A
+A is low
+C is high
+RuningTaskName is C
+
+@999
+C is low
+A is high
+RuningTaskName is A
+A is low
+B is high
+RuningTaskName is B
+@enduml
