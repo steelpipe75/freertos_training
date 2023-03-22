@@ -1,17 +1,14 @@
 @startuml
-binary "Tmr_Svc" as Tmr_Svc
 binary "A" as A
 binary "B" as B
 binary "C" as C
 concise "RuningTaskName" as RuningTaskName
 
+caption sample_vTaskPrioritySet.c TaskSwitch Timing Diagram
+
+scale 100 as 50 pixels
+
 @0
-Tmr_Svc is high
-RuningTaskName is Tmr_Svc
-Tmr_Svc is low
-A is high
-RuningTaskName is A
-A is low
 B is high
 RuningTaskName is B
 
@@ -87,11 +84,9 @@ A is low
 C is high
 RuningTaskName is C
 
-@999
-C is low
-A is high
-RuningTaskName is A
-A is low
-B is high
-RuningTaskName is B
+@950
+A is {hidden}
+B is {hidden}
+C is {hidden}
+RuningTaskName is {hidden}
 @enduml
