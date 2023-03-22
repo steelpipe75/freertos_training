@@ -1,18 +1,13 @@
 @startuml
-binary "Tmr_Svc" as Tmr_Svc
 binary "A" as A
 binary "B" as B
 concise "RuningTaskName" as RuningTaskName
 
+caption sample_uxTaskPriorityGet.c TaskSwitch Timing Diagram
+
+scale 1 as 50 pixels
+
 @0
-Tmr_Svc is high
-RuningTaskName is Tmr_Svc
-Tmr_Svc is low
-A is high
-RuningTaskName is A
-A is low
-B is high
-RuningTaskName is B
 B is low
 A is high
 RuningTaskName is A
@@ -32,198 +27,8 @@ A is low
 B is high
 RuningTaskName is B
 
-@9
-B is low
-A is high
-RuningTaskName is A
-
-@11
-A is low
-B is high
-RuningTaskName is B
-
-@13
-B is low
-A is high
-RuningTaskName is A
-
-@15
-A is low
-B is high
-RuningTaskName is B
-
-@18
-B is low
-A is high
-RuningTaskName is A
-
-@20
-A is low
-B is high
-RuningTaskName is B
-
-@23
-B is low
-A is high
-RuningTaskName is A
-
-@25
-A is low
-B is high
-RuningTaskName is B
-
-@27
-B is low
-A is high
-RuningTaskName is A
-
-@29
-A is low
-B is high
-RuningTaskName is B
-
-@31
-B is low
-A is high
-RuningTaskName is A
-
-@33
-A is low
-B is high
-RuningTaskName is B
-
-@36
-B is low
-A is high
-RuningTaskName is A
-
-@41
-A is low
-B is high
-RuningTaskName is B
-
-@44
-B is low
-A is high
-RuningTaskName is A
-
-@47
-A is low
-B is high
-RuningTaskName is B
-
-@49
-B is low
-A is high
-RuningTaskName is A
-
-@53
-A is low
-B is high
-RuningTaskName is B
-
-@56
-B is low
-A is high
-RuningTaskName is A
-
-@58
-A is low
-B is high
-RuningTaskName is B
-
-@60
-B is low
-A is high
-RuningTaskName is A
-
-@62
-A is low
-B is high
-RuningTaskName is B
-
-@64
-B is low
-A is high
-RuningTaskName is A
-
-@66
-A is low
-B is high
-RuningTaskName is B
-
-@69
-B is low
-A is high
-RuningTaskName is A
-
-@73
-A is low
-B is high
-RuningTaskName is B
-
-@76
-B is low
-A is high
-RuningTaskName is A
-
-@78
-A is low
-B is high
-RuningTaskName is B
-
-@80
-B is low
-A is high
-RuningTaskName is A
-
-@83
-A is low
-B is high
-RuningTaskName is B
-
-@85
-B is low
-A is high
-RuningTaskName is A
-
-@87
-A is low
-B is high
-RuningTaskName is B
-
-@89
-B is low
-A is high
-RuningTaskName is A
-
-@91
-A is low
-B is high
-RuningTaskName is B
-
-@93
-B is low
-A is high
-RuningTaskName is A
-
-@95
-A is low
-B is high
-RuningTaskName is B
-
-@97
-B is low
-A is high
-RuningTaskName is A
-
-@100
-A is low
-B is high
-RuningTaskName is B
-
-@104
-B is low
-A is high
-RuningTaskName is A
+@7
+B is {hidden}
+A is {hidden}
+RuningTaskName is {hidden}
 @enduml
