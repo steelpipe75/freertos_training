@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="164px" preserveAspectRatio="none" style="width:444px;height:164px;" version="1.1" viewBox="0 0 444 164" width="444px" zoomAndPan="magnify"><defs/><g><line style="stroke:#000000;stroke-width:1.7;" x1="10" x2="10" y1="10" y2="123.9688"/><line style="stroke:#000000;stroke-width:1.7;" x1="432" x2="432" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="27" x2="27" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="77" x2="77" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="127" x2="127" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="177" x2="177" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="227" x2="227" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="277" x2="277" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="327" x2="327" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="377" x2="377" y1="10" y2="123.9688"/><line style="stroke:#AAAAAA;stroke-width:0.5;stroke-dasharray:3.0,5.0;" x1="427" x2="427" y1="10" y2="123.9688"/><line style="stroke:#000000;stroke-width:1.7;" x1="10" x2="432" y1="10" y2="10"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="15" y="29.1543">A</text><line style="stroke:#038048;stroke-width:1.5;" x1="27" x2="27" y1="32" y2="32"/><line style="stroke:#038048;stroke-width:1.5;" x1="27" x2="27" y1="18" y2="32"/><line style="stroke:#038048;stroke-width:1.5;" x1="27" x2="127" y1="18" y2="18"/><line style="stroke:#038048;stroke-width:1.5;" x1="127" x2="127" y1="18" y2="32"/><line style="stroke:#038048;stroke-width:1.5;" x1="127" x2="227" y1="32" y2="32"/><line style="stroke:#038048;stroke-width:1.5;" x1="227" x2="227" y1="18" y2="32"/><line style="stroke:#038048;stroke-width:1.5;" x1="227" x2="327" y1="18" y2="18"/><line style="stroke:#038048;stroke-width:1.5;" x1="327" x2="327" y1="18" y2="32"/><line style="stroke:#038048;stroke-width:1.5;" x1="327" x2="377" y1="32" y2="32"/><line style="stroke:#038048;stroke-width:1.5;" x1="377" x2="427" y1="32" y2="32"/><line style="stroke:#000000;stroke-width:1.7;" x1="10" x2="432" y1="40" y2="40"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="15" y="59.1543">B</text><line style="stroke:#038048;stroke-width:1.5;" x1="27" x2="27" y1="62" y2="62"/><line style="stroke:#038048;stroke-width:1.5;" x1="27" x2="127" y1="62" y2="62"/><line style="stroke:#038048;stroke-width:1.5;" x1="127" x2="127" y1="48" y2="62"/><line style="stroke:#038048;stroke-width:1.5;" x1="127" x2="227" y1="48" y2="48"/><line style="stroke:#038048;stroke-width:1.5;" x1="227" x2="227" y1="48" y2="62"/><line style="stroke:#038048;stroke-width:1.5;" x1="227" x2="327" y1="62" y2="62"/><line style="stroke:#038048;stroke-width:1.5;" x1="327" x2="327" y1="48" y2="62"/><line style="stroke:#038048;stroke-width:1.5;" x1="327" x2="377" y1="48" y2="48"/><line style="stroke:#038048;stroke-width:1.5;" x1="377" x2="377" y1="48" y2="62"/><line style="stroke:#038048;stroke-width:1.5;" x1="377" x2="427" y1="62" y2="62"/><line style="stroke:#000000;stroke-width:1.7;" x1="10" x2="432" y1="70" y2="70"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="97" x="15" y="81.1387">RuningTaskName</text><line style="stroke:#000000;stroke-width:1.0;" x1="10" x2="113" y1="84.9688" y2="84.9688"/><line style="stroke:#000000;stroke-width:1.0;" x1="113" x2="123" y1="84.9688" y2="70"/><polygon fill="#D7E0F2" points="39,89.9688,115,89.9688,127,101.9688,115,113.9688,39,113.9688,27,101.9688" style="stroke:#038048;stroke-width:1.5;"/><polygon fill="#D7E0F2" points="139,89.9688,215,89.9688,227,101.9688,215,113.9688,139,113.9688,127,101.9688" style="stroke:#038048;stroke-width:1.5;"/><polygon fill="#D7E0F2" points="239,89.9688,315,89.9688,327,101.9688,315,113.9688,239,113.9688,227,101.9688" style="stroke:#038048;stroke-width:1.5;"/><polygon fill="#D7E0F2" points="339,89.9688,365,89.9688,377,101.9688,365,113.9688,339,113.9688,327,101.9688" style="stroke:#038048;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="73.5" y="106.123">A</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="173.5" y="106.123">B</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="273.5" y="106.123">A</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="348.5" y="106.123">B</text><line style="stroke:#000000;stroke-width:2.0;" x1="27" x2="27" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="77" x2="77" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="127" x2="127" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="177" x2="177" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="227" x2="227" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="277" x2="277" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="327" x2="327" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="377" x2="377" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="427" x2="427" y1="123.9688" y2="128.9688"/><line style="stroke:#000000;stroke-width:2.0;" x1="27" x2="427" y1="123.9688" y2="123.9688"/><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="23.5" y="141.1074">0</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="73.5" y="141.1074">1</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="123.5" y="141.1074">2</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="173.5" y="141.1074">3</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="223.5" y="141.1074">4</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="273.5" y="141.1074">5</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="323.5" y="141.1074">6</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="373.5" y="141.1074">7</text><text fill="#000000" font-family="sans-serif" font-size="12" lengthAdjust="spacingAndGlyphs" textLength="7" x="423.5" y="141.1074">8</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacingAndGlyphs" textLength="353" x="44.5" y="150.9326">sample_uxTaskPriorityGet.c TaskSwitch Timing Diagram</text><!--MD5=[434551d19198f7a64ddfc26ce39feab1]
+@startuml
+binary "A" as A
+binary "B" as B
+concise "RuningTaskName" as RuningTaskName
+
+caption sample_uxTaskPriorityGet.c TaskSwitch Timing Diagram
+
+scale 1 as 50 pixels
+
+@0
+B is low
+A is high
+RuningTaskName is A
+
+@2
+A is low
+B is high
+RuningTaskName is B
+
+@4
+B is low
+A is high
+RuningTaskName is A
+
+@6
+A is low
+B is high
+RuningTaskName is B
+
+@7
+B is {hidden}
+A is {hidden}
+RuningTaskName is {hidden}
+
+@enduml
+
+PlantUML version 1.2020.23(Sun Dec 13 19:14:58 GMT 2020)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: UTF-8
+Language: en
+Country: US
+--></g></svg>
