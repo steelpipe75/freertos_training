@@ -69,6 +69,7 @@ static void prvPrintTask( void *pvParameters )
 		xQueueReceive( xPrintQueue, &( pStr ), ( TickType_t ) portMAX_DELAY );
 
 		printf("Task %s Runing...\r\n", pStr);
+		fflush( stdout );
 	}
 }
 
