@@ -10,9 +10,9 @@ extern "C" {
 namespace {
 
 #if defined(__unix) || defined(__unix__)
-	const long long WaitTime = 500;
+	const long long WaitTime = 200;
 #else /* #if defined(__unix) || defined(__unix__) */
-	const long long WaitTime = 500;
+	const long long WaitTime = 200;
 #endif /* #if defined(__unix) || defined(__unix__) */
 
 static void drive_freertos(void);
