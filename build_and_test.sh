@@ -21,8 +21,11 @@ cmake_build_test() {
 
 cmake_build_test ./training/01_Task_Creation/1_xTaskCreateStatic
 cmake_build_test ./training/01_Task_Creation/2_xTaskCreate
+
 cmake_build_test ./training/02_Task_Control/1_vTaskDelay
 cmake_build_test ./training/02_Task_Control/2_vTaskDelayUntil
 cmake_build_test ./training/02_Task_Control/3_xTaskDelayUntil
 cmake_build_test ./training/02_Task_Control/4_vTaskPrioritySet
 cmake_build_test ./training/02_Task_Control/5_uxTaskPriorityGet
+
+cmake_build_test ./training/03_Queue_Management/1_Queue_Send_And_Receive
