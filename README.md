@@ -4,10 +4,11 @@
 
 freertosを使う練習
 
-| Link                                                    |
-|---------------------------------------------------------|
-| [01_Task_Creation](training/01_Task_Creation/README.md) |
-| [02_Task_Control](training/02_Task_Control/README.md)   |
+| Link                                                          |
+|---------------------------------------------------------------|
+| [01_Task_Creation](training/01_Task_Creation/README.md)       |
+| [02_Task_Control](training/02_Task_Control/README.md)         |
+| [03_Queue_Management](training/03_Queue_Management/README.md) |
 
 ## Demo_CMake
 
