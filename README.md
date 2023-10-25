@@ -2,7 +2,7 @@
 
 ## training
 
-freertosを使う練習
+Windows Simulator / Posix/Linux Simulator を利用した FreeRTOSを使う練習
 
 | Link                                                          |
 |---------------------------------------------------------------|
@@ -12,7 +12,7 @@ freertosを使う練習
 
 ## Demo_CMake
 
-Visual Studio を使わずに freertos の Demo をビルドするために CMake化
+Visual Studio を使わずに Windows Simulator の Demo をビルドするために CMake化
 
 | Link                                                    |
 |---------------------------------------------------------|
