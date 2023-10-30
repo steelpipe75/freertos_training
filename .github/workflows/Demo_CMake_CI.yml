@@ -20,9 +20,6 @@ jobs:
 
     steps:
 
-    - uses: egor-tensin/setup-clang@v1
-    - uses: seanmiddleditch/gha-setup-ninja@master
-
     - uses: actions/checkout@v3
       # with:
       #   fetch-depth: 1
@@ -38,7 +35,7 @@ jobs:
     - name: Configure CMake Demo_CMake/FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator
       # Configure CMake in a 'build' subdirectory. `CMAKE_BUILD_TYPE` is only required if you are using a single-configuration generator such as make.
       # See https://cmake.org/cmake/help/latest/variable/CMAKE_BUILD_TYPE.html?highlight=cmake_build_type
-      run: cmake -B ${{github.workspace}}/Demo_CMake/FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator/build -S ${{github.workspace}}/Demo_CMake/FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja
+      run: cmake -B ${{github.workspace}}/Demo_CMake/FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator/build -S ${{github.workspace}}/Demo_CMake/FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}}
 
     - name: Build Demo_CMake/FreeRTOS_Plus_CLI_with_Trace_Windows_Simulator
       # Build your program with the given configuration
