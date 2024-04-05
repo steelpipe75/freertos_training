@@ -41,7 +41,7 @@ endif()
 
 #################################################################################
 
-include(${WORKSPACE_ROOT_DIR}/lib/RTOS/RTOS.cmake)
+include(${WORKSPACE_ROOT_DIR}/lib/RTOS/FreeRTOS.cmake)
 
 #################################################################################
 
@@ -52,7 +52,6 @@ set(INCLUDE_DIR
 
 set(SOURCES
     sample_xTaskCreateStatic.c
-    ${RTOS_SOURCES}
 )
 
 include_directories(
@@ -63,6 +62,8 @@ add_executable(${ProjectName}
     ./main.c
     ${SOURCES}
 )
+
+target_link_libraries(${ProjectName} FreeRTOS)
 
 if(UNIX)
     target_link_libraries(${ProjectName} pthread)
