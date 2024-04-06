@@ -14,20 +14,14 @@ include(GoogleTest)
 
 #################################################################################
 
-include(${WORKSPACE_ROOT_DIR}/lib/RTOS/RTOS.cmake)
-
-#################################################################################
-
 set(TestName "${ProjectName}_Test")
 
 set(INCLUDE_DIR
     .
-    ${RTOS_INCLUDE_DIR}
 )
 
 set(SOURCES
     ../sample_xTaskCreateStatic.c
-    ${RTOS_SOURCES}
 )
 
 include_directories(
@@ -40,9 +34,11 @@ add_executable(${TestName}
 )
 
 if(UNIX)
-    target_link_libraries(${TestName} pthread gtest_main)
+    target_link_libraries(${TestName} pthread)
 elseif(WIN32)
-    target_link_libraries(${TestName} winmm gtest_main)
+    target_link_libraries(${TestName} winmm)
 endif()
+
+    target_link_libraries(${TestName} gtest_main FreeRTOS)
 
 gtest_discover_tests(${TestName})
