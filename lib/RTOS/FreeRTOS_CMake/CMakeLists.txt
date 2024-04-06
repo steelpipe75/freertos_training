@@ -61,3 +61,10 @@ add_library(
     STATIC
     ${RTOS_SOURCES}
 )
+
+target_include_directories(
+    FreeRTOS
+    PUBLIC
+    ${CMAKE_SOURCE_DIR}
+    ${RTOS_INCLUDE_DIR}
+)

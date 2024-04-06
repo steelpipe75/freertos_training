@@ -41,13 +41,12 @@ endif()
 
 #################################################################################
 
-include(${WORKSPACE_ROOT_DIR}/lib/RTOS/FreeRTOS.cmake)
+add_subdirectory(${WORKSPACE_ROOT_DIR}/lib/RTOS/FreeRTOS_CMake lib/third_party/FreeRTOS)
 
 #################################################################################
 
 set(INCLUDE_DIR
     .
-    ${RTOS_INCLUDE_DIR}
 )
 
 set(SOURCES

@@ -14,15 +14,10 @@ include(GoogleTest)
 
 #################################################################################
 
-include(${WORKSPACE_ROOT_DIR}/lib/RTOS/RTOS.cmake)
-
-#################################################################################
-
 set(TestName "${ProjectName}_Test")
 
 set(INCLUDE_DIR
     .
-    ${RTOS_INCLUDE_DIR}
 )
 
 set(SOURCES
