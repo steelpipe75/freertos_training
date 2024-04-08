@@ -39,6 +39,6 @@ elseif(WIN32)
     target_link_libraries(${TestName} winmm)
 endif()
 
-    target_link_libraries(${TestName} gtest_main FreeRTOS)
+target_link_libraries(${TestName} gtest_main FreeRTOS)
 
 gtest_discover_tests(${TestName})

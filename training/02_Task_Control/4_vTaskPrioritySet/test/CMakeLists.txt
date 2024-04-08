@@ -14,7 +14,6 @@ include(GoogleTest)
 
 #################################################################################
 
-include(${WORKSPACE_ROOT_DIR}/lib/RTOS/RTOS.cmake)
 if(USE_MY_TRACE)
     include(${WORKSPACE_ROOT_DIR}/lib/RTOS/MyTrace/MyTrace.cmake)
     add_definitions(-DUSE_MY_TRACE)
@@ -27,14 +26,12 @@ set(TestName "${ProjectName}_Test")
 set(INCLUDE_DIR
     .
     ${WORKSPACE_ROOT_DIR}/lib/other
-    ${RTOS_INCLUDE_DIR}
     ${RTOS_MY_TRACE_INCLUDE_DIR}
 )
 
 set(SOURCES
     ../sample_vTaskPrioritySet.c
     ${WORKSPACE_ROOT_DIR}/lib/other/work.c
-    ${RTOS_SOURCES}
     ${RTOS_MY_TRACE_SOURCES}
 )
 
@@ -48,9 +45,11 @@ add_executable(${TestName}
 )
 
 if(UNIX)
-    target_link_libraries(${TestName} pthread gtest_main)
+    target_link_libraries(${TestName} pthread)
 elseif(WIN32)
-    target_link_libraries(${TestName} winmm gtest_main)
+    target_link_libraries(${TestName} winmm)
 endif()
+
+target_link_libraries(${TestName} gtest_main FreeRTOS)
 
 gtest_discover_tests(${TestName})
