@@ -41,6 +41,7 @@ endif()
 
 #################################################################################
 
+set(FREERTOSCONFIG_DIR ${CMAKE_SOURCE_DIR})
 add_subdirectory(${WORKSPACE_ROOT_DIR}/lib/RTOS/FreeRTOS_CMake lib/third_party/FreeRTOS)
 
 #################################################################################

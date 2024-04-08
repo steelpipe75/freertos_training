@@ -17,6 +17,12 @@ endif()
 
 #################################################################################
 
+if(NOT FREERTOSCONFIG_DIR)
+    message(FATAL_ERROR "FREERTOSCONFIG_DIR is not set. Please set FREERTOSCONFIG_DIR.")
+endif()
+
+#################################################################################
+
 set(RTOS_INCLUDE_DIR
     ${WORKSPACE_ROOT_DIR}/lib/third_party/FreeRTOS/FreeRTOS/Source/include
     ${WORKSPACE_ROOT_DIR}/lib/third_party/FreeRTOS/FreeRTOS/Demo/Common/include
@@ -65,6 +71,6 @@ add_library(
 target_include_directories(
     FreeRTOS
     PUBLIC
-    ${CMAKE_SOURCE_DIR}
+    ${FREERTOSCONFIG_DIR}
     ${RTOS_INCLUDE_DIR}
 )
